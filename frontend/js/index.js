@@ -5,7 +5,7 @@ request.onreadystatechange = function() {
         var products = JSON.parse(this.responseText);
 
         products.forEach((liste) => {
-            displayProduct(liste);
+            displayProducts(liste);
         });
     }
 };
@@ -16,4 +16,3 @@ request.send();
 function displayProducts(liste) {
     document.getElementById('productlist').innerHTML += renderProducts(liste);
 }
-
