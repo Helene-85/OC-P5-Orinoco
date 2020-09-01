@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta description="Découvrez les meubles en chêne masif en vente chez Orinoco. Presonnalisez vos meubles en choisissant le style de vernis qui vous ressemble !">
-        <link rel="stylesheet" href="./css/style.css" />
         <script src="https://kit.fontawesome.com/845f360e8f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./css/style.css"/>
+        <script src="./js/utils.js" async></script>
         <script src="./js/index.js" async></script>
         <title>Meubles en chêne - Orinoco</title>
     </head>
@@ -19,24 +20,24 @@
                     </div>
                     <div class="navbar__nav" role="navigation">
                         <a class="navbar__nav-link" href="index.html">Accueil</a>
-                        <a class="navbar__nav-link" href="/pages/panier.html">Panier</a>
-                        <a class="navbar__nav-link" href="/pages/commande.html">Commande</a>
+                        <a class="navbar__nav-link" href="/pages/cart.html">Panier</a>
+                        <a class="navbar__nav-link" href="/pages/order.html">Commande</a>
                         <a href="/pages/panier.html" alt="Mon panier"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </nav>
             </header>
             <main>
-                <div class="products">
-                    <p id="productlist"></p>
-                </div>
+                <h1 class="main-titles">Bienvenue sur Oricono</h1>
+                <div id="productList"></div>
             </main>
             <footer class="footer">
                 <div>
                     <a href="/index.html">Accueil</a>
-                    <a href="/pages/panier.html">Panier</a>
-                    <a href="/pages/commande.html">Commande</a>
+                    <a href="/pages/cart.html">Panier</a>
+                    <a href="/pages/order.html">Commande</a>
                   </div>
             </footer>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     </body>
 </html>

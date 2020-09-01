@@ -10,11 +10,23 @@ body, h1, h2, h3, h4, h5, p {
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'OpenSansLigt', sans-serif;
 }
 
 main {
     max-width: 1200px;
+    min-height: 1400px;
     margin: auto;
     margin-top: 50px;
     text-align: center;
+}
+
+.main-titles {
+    font-family: 'Raleway', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
 }
