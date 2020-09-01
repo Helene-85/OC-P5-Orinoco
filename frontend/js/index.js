@@ -17,7 +17,11 @@ function displayProduct(meuble) {
   document.getElementById('productList').innerHTML += `
   <div class="card">
     <h2 class="card-name">${meuble.name}<h2>
-    <img class="card-img" src="${meuble.imageURL} alt="meuble en chêne"/>
+    <img 
+    class="card-img" 
+    src="${meuble.imageURL} 
+    alt="meuble en chêne"
+    />
     <p class="card-id">${meuble._id}</p>
     <p class="card-varnish">${meuble.varnish}<p>
     <p class="card-price">${meuble.price / 100},00€</p>

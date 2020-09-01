@@ -15,7 +15,6 @@ body {
 
 main {
     max-width: 1200px;
-    min-height: 1400px;
     margin: auto;
     margin-top: 50px;
     text-align: center;
@@ -25,8 +24,3 @@ main {
     font-family: 'Raleway', sans-serif;
 }
 
-.card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-}
