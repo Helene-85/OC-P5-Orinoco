@@ -1,6 +1,15 @@
-# Orinoco #
+# Projet 5 formation Développeur web Openclassrooms #
 
 This is the back end server for Project 5 of the Junior Web Developer path.
+
+### Compétences évaluées ###
+
+- Valider des données issues de sources externes
+- Gérer des événements JavaScript
+- Créer un plan de test pour une application
+- Interagir avec un web service avec JavaScript
+
++ Progression : en cours de réalisation
 
 ### Prerequisites ###
 
