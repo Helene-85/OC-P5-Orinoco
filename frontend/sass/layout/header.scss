@@ -15,6 +15,9 @@
     & .navbar__nav {
         padding-right: 50px;
         font-family: $font-maintitle;
+        @media screen and (max-width: 768px) {
+            display: none;
+            }
     }
 }
 .navbar__nav-link {
@@ -39,4 +42,9 @@ a {
     width: 82px;
     height: 72px;
     }
+    @media screen and (max-width: 768px) {
+    font-size: 0.7em;
+    padding: 10px 10px 10px 10px;
+    }
+
 }

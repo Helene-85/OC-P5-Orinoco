@@ -35,6 +35,11 @@
   padding-right: 50px;
   font-family: "OpenSansBold", sans-serif;
 }
+@media screen and (max-width: 768px) {
+  .navbar .navbar__nav {
+    display: none;
+  }
+}
 
 .navbar__nav-link {
   padding-left: 5px;
@@ -59,6 +64,12 @@ a .fa-shopping-cart {
 .logo-title img {
   width: 82px;
   height: 72px;
+}
+@media screen and (max-width: 768px) {
+  .logo-title {
+    font-size: 0.7em;
+    padding: 10px 10px 10px 10px;
+  }
 }
 
 footer {
@@ -127,6 +138,11 @@ main h1 {
   font-family: "ShadowsIntoLight", cursive;
   font-size: 3em;
 }
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 1.6em;
+  }
+}
 
 .display-cards {
   display: flex;
@@ -142,6 +158,12 @@ main h1 {
   text-align: center;
   box-shadow: 0px 0px 4px 5px #f1f1f1;
   padding-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 .card .card-img {
   width: 300px;
