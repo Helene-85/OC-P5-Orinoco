@@ -7,6 +7,7 @@ function ajax(url) {
     request.onreadystatechange = function() {
       if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
           resolve(JSON.parse(this.responseText));
+
       }  else  {
           reject("Votre requête n'a pas aboutie")
       }
