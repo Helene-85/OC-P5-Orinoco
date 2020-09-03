@@ -1,4 +1,4 @@
-var request = new XMLHttpRequest();
+/* let request = new XMLHttpRequest();
 
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
@@ -11,8 +11,19 @@ request.onreadystatechange = function() {
 };
 
 request.open("GET", "http://localhost:3000/api/furniture");
-request.send();
+request.send(); */
+
+ajax("http://localhost:3000/api/furniture")
+.then((products) => {
+    displayProduct(products);
+  })
+.catch((msg) => {
+  alert("Votre requête n'a pas aboutie")
+})
+
 
 function displayProduct(meuble) {
-  document.getElementById('productList').innerHTML += renderProduct(meuble);
+  products.forEach((meuble) => {
+    document.getElementById('productList').innerHTML += renderProduct(meuble);
+  });
 };
