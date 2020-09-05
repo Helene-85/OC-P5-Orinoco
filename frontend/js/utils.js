@@ -1,21 +1,17 @@
 function ajax(url) {
-  return new Promise(function(resolve, reject) {
-    let urlParams = new URLSearchParams(window.location.search);
-    let id = urlParams.get('id');
-    let request = new XMLHttpRequest();
-
-    request.onreadystatechange = function() {
-      if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-          resolve(JSON.parse(this.responseText));
-
+  return new Promise((resolve, reject) => {
+    let req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.addEventListener("load", function() {
+      if (req.status >= 200) {
+          resolve(JSON.parse(req.responseText));
       }  else  {
-          reject("Votre requête n'a pas aboutie")
+          reject(req.statusText);
       }
-    };
-
-  request.open("GET", url);
-  request.send();
   });
+  request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  request.send();
+  })
 }
 
 function renderProduct(meuble) {
