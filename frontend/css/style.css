@@ -106,6 +106,33 @@ footer a {
   }
 }
 
+.product__single {
+  max-width: 1440px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 4px 5px #f1f1f1;
+}
+
+.card__single-product {
+  display: flex;
+  align-items: center;
+}
+
+.card__left-side {
+  width: 50%;
+}
+
+.card__right-side {
+  width: 50%;
+}
+
+.card__single-name {
+      font-size: 3em;
+} 
+
+
 body, h1, h2, h3, h4, h5, p {
   margin: 0;
 }

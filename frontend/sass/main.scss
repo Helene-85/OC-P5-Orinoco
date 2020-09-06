@@ -2,6 +2,9 @@
 @import "typo.scss";
 @import "layout/header.scss";
 @import "layout/footer.scss";
+@import "pages/products.scss";
+@import "pages/cart.scss";
+@import "pages/order.scss";
 
 body, h1, h2, h3, h4, h5, p {
     margin: 0;
@@ -41,7 +44,7 @@ main {
 
 .display-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
 }
 
@@ -70,7 +73,7 @@ main {
     }
     & .card-description {
         font-family: $font-text;
-        font-size: 0.5em;
+        font-size: 0.5em; 
         font-weight: lighter;
         letter-spacing: 1px;
         margin-top: 10px;

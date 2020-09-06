@@ -1,13 +1,6 @@
-ajax("http://localhost:3000/api/furniture")
-.then((products) => {
-    displayProduct(products)
-  })
-.catch((msg) => {
-  alert("Votre requête n'a pas aboutie")
-})
+ajax("http://localhost:3000/api/furniture");
 
-function displayProduct(meubles) {
-  products.forEach((meuble) => {
-    document.getElementById('productList').innerHTML += renderProduct(meuble);
-  });
-}
+
+function displayProduct(products) {
+    document.getElementById('productList').innerHTML += renderProduct(products, "List");
+};
