@@ -5,10 +5,6 @@ function ajax(url) {
     req.addEventListener("load", function() {
       if(req.status >=200) {
         resolve(JSON.parse(req.responseText));
-        let products = JSON.parse(this.responseText);
-        products.forEach((products) => {
-          displayProduct(products);
-        });
       } else {
         reject(req.statusText);
       }
@@ -30,7 +26,7 @@ function renderProduct(meuble, type) {
         <h2 class="card-name">${meuble.name}<h2>
         <p class="card-description">${meuble.description}</p>
         <p class="card-price">${meuble.price / 100},00€</p>
-        <a href="./pages/product.html" class="card-btn">Description</a>
+        <a href="./pages/product.html?id=${meuble._id}" class="card-btn">Description</a>
       </div>
         `
   }
@@ -49,9 +45,24 @@ function renderProduct(meuble, type) {
           <p class="card__single-id">${meuble._id}</p>
           <p class="card__single-description">${meuble.description}</p>
           <p class="card__single-price">${meuble.price / 100},00€</p>
-          <a href="./pages/cart.html" class="card__single-btn">Ajouter au panier</a>
         </div>
       </div>
         `
   }
+}
+
+function show(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function hide(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function disableButton(id) {
+  document.getElementById(id).disabled = true;
+}
+
+function enableButton(id) {
+  document.getElementById(id).disabled = false;
 }

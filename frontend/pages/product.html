@@ -6,8 +6,8 @@
         <meta description="Découvrez les meubles en chêne masif en vente chez Orinoco. Presonnalisez vos meubles en choisissant le style de vernis qui vous ressemble !">
         <link rel="stylesheet" href="../css/style.css"/>
         <script src="https://kit.fontawesome.com/845f360e8f.js" crossorigin="anonymous"></script>
-        <script src="../js/product.js" defer></script>
         <script src="../js/utils.js" defer></script>
+        <script src="../js/product.js" defer></script>
         <title>Meubles en chêne - Orinoco</title>
     </head>
     <body>
@@ -20,14 +20,15 @@
                     </div>
                     <div class="navbar__nav" role="navigation">
                         <a class="navbar__nav-link" href="../index.html">Accueil</a>
-                        <a class="navbar__nav-link" href="../pages/cart.html">Panier</a>
+                        <a class="navbar__nav-link" href="./cart.html">Panier</a>
                         <a class="navbar__nav-link" href="../pages/order.html">Commande</a>
-                        <a href="../pages/panier.html" alt="Mon panier"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="./cart.html" alt="Mon panier"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </nav>
             </header>
             <main class="product__single">
                 <div class="product__single-display" id="productSingle"></div>
+                <button type="button" href="./cart.html" class="card__single-btn" id="addToCartButton">Ajouter au panier</button>
             </main>
             <footer class="footer">
                 <div>

@@ -1,14 +1,43 @@
-let urlParams = new URLSearchParams(window.location.search);
-console.log(urlParams);
-let id = urlParams.get("id");
-console.log(id);
+hide('addToCartButton');
+disableButton('addToCartButton');
 
-ajax("http://localhost:3000/api/furniture/" + id).then((meuble) => {
+ajax("http://localhost:3000/api/furniture/" + getIdFromUrl())
+.then((meuble) => {
     displayProduct(meuble);
-    console.log(displayProduct);
+    show('addToCartButton');
+    
+    if (localStorage.getItem('products')) {
+        products = JSON.parse(localStorage.getItem('products'));
+    } else {
+        products = [];
+    }
+
+    if (! products.includes(getIdFromUrl())) {
+        enableButton('addToCartButton');
+        listenForCartAddition();
+    }
 })
 
 
 function displayProduct(meuble) {
     document.getElementById('productSingle').innerHTML += renderProduct(meuble, "Single");
 };
+
+function getIdFromUrl() {
+    let urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get("id");
+}
+
+function listenForCartAddition() {
+    document.getElementById('addToCartButton').addEventListener('click', () => {
+        if (localStorage.getItem('products')) {
+            products = JSON.parse(localStorage.getItem('products'));
+        } else {
+            products = [];
+        }
+
+        products.push(getIdFromUrl());
+        localStorage.setItem('products', JSON.stringify(products));
+        disableButton('addToCartButton')
+    });
+}
