@@ -44,6 +44,11 @@ function renderProduct(meuble, type) {
           <h2 class="card__single-name">${meuble.name}<h2>
           <p class="card__single-description">${meuble.description}</p>
           <p class="card__single-price">${meuble.price / 100},00€</p>
+          <select class="card__single-options">
+            <option>${meuble.varnish[0]}</option>
+            <option>${meuble.varnish[1]}</option>
+            <option>${meuble.varnish[2]}</option>
+          </select>
         </div>
       </div>
         `
