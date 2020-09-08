@@ -42,7 +42,6 @@ function renderProduct(meuble, type) {
         </div>
         <div class="card__right-side">
           <h2 class="card__single-name">${meuble.name}<h2>
-          <p class="card__single-id">${meuble._id}</p>
           <p class="card__single-description">${meuble.description}</p>
           <p class="card__single-price">${meuble.price / 100},00€</p>
         </div>

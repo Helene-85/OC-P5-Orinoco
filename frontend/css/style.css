@@ -111,7 +111,6 @@ footer a {
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
-  box-shadow: 0px 0px 4px 5px #f1f1f1;
 }
 
 .card__single-product {
@@ -120,14 +119,47 @@ footer a {
 }
 
 .card__left-side {
-  width: 50%;
+  width: 60%;
+}
+.card__left-side .card__single-img {
+  width: 400px;
+  padding-top: 20px;
 }
 
 .card__right-side {
-  width: 50%;
+  text-align: left;
+  width: 40%;
 }
 .card__right-side .card__single-name {
-  font-size: 3em;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.card__right-side .card__single-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.6em;
+  margin-bottom: 20px;
+}
+.card__right-side .card__single-price {
+  letter-spacing: 1px;
+}
+
+button {
+  margin-top: 50px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 9.5px;
+  background: 0px center #2b2b2b;
+  color: white;
+  display: inline-block;
+  font-weight: 14px;
+  padding: 0px 10px;
+  letter-spacing: 0.5px;
+  height: 45px;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+button:hover {
+  background: 0px center #616161;
 }
 
 body, h1, h2, h3, h4, h5, p {
