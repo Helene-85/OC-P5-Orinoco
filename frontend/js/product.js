@@ -30,6 +30,7 @@ function getIdFromUrl() {
 
 function listenForCartAddition() {
     document.getElementById('addToCartButton').addEventListener('click', () => {
+        alert('Article ajouté au panier');
         if (localStorage.getItem('products')) {
             products = JSON.parse(localStorage.getItem('products'));
         } else {

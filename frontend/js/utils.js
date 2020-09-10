@@ -14,6 +14,7 @@ function ajax(url) {
   })
 }
 
+
 function renderProduct(meuble, type) {
   if(type == "List") {
     return `
@@ -31,6 +32,14 @@ function renderProduct(meuble, type) {
         `
   }
   if(type == "Single") {
+    
+    let htmlOptions = '';
+
+    for (let i = 0; i < meuble.varnish.length; i++) {
+      console.log(meuble.varnish)
+      htmlOptions += `<option>${meuble.varnish[i]}<option>`
+    }
+
     return`
       <div class="card__single-product">
         <div class="card__left-side">
@@ -44,11 +53,7 @@ function renderProduct(meuble, type) {
           <h2 class="card__single-name">${meuble.name}<h2>
           <p class="card__single-description">${meuble.description}</p>
           <p class="card__single-price">${meuble.price / 100},00€</p>
-          <select class="card__single-options">
-            <option>${meuble.varnish[0]}</option>
-            <option>${meuble.varnish[1]}</option>
-            <option>${meuble.varnish[2]}</option>
-          </select>
+          <select id="chooseAnOption" class="card__single-options">${htmlOptions}</select>
         </div>
       </div>
         `
