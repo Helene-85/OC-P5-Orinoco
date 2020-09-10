@@ -27,7 +27,47 @@
                 </nav>
             </header>
             <main>
-                <div class="produits" id="product-card"></div>
+                <div class="cart-left-side">
+                    <div class="produits" id="product-card"></div>
+                </div>
+                <div class="class-rigth-side">
+                    <div class="order">
+                        <h3 class="order__title">Validez votre commande</h3>
+                        <form class="order__form">
+                            <div class="firstname">
+                                <label for="firstName" class="firstname-label">Prénom</label>
+                                <input type="text" class="firstname-input" id="inputFirstName" placeholder="Prénom" required/>
+                            </div>
+                            <div class="lastname">
+                                <label for="lastName" class="lastname-label">Nom</label>
+                                <input type="text" class="lastname-input" id="inputLastName" placeholder="Nom" required/>
+                            </div>
+                            <div class="email">
+                                <label for="inputEmail" class="email-label">Email</label>
+                                <input type="email" class="email-input" id="inputEmail" placeholder="xxx@yyy.zzz" required/>
+                            </div>
+                            <div class="phonenumber">
+                                <label for="phoneNumber" class="phone-label">Téléphone</label>
+                                <input type="tel" maxlength="10" class="phone-input" id="phoneNumber" placeholder="0000000000" required/>
+                            </div>
+                            <div class="adress">
+                                <label for="inputAdress" class="adress-label">Adresse</label>
+                                <input type="text" class="adress-input" id="adress" placeholder="10 rue du Paradis" required/>
+                            </div>
+                            <div class="zip">
+                                <label for="inputZip" class="zip-label">Code postal</label>
+                                <input type="text" class="zip-input" id="zip" placeholder="75000" required>
+                            </div>
+                            <div class="city">
+                                <label for="inputCity" class="city-label">Ville</label>
+                                <input type="text" class="city-input" id="city" placeholder="Paris" required>
+                            </div>
+                            <div class="submission">
+                                <button class="submit-button">Commander</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </main>
             <footer class="footer">
                 <div>
