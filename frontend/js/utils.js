@@ -1,3 +1,15 @@
+/***********************************************
+  Requête ajax de type Get 'url'
+  La requête ajax permet la mise en place de la 
+  méthode JSON.parse() pour construire l'objet 
+  JavaScript
+ ***********************************************/
+
+/***********************************************
+  Mise en place d'un promesse dans la fonction pour
+  y attacher le callback en cas de rejet 
+ ***********************************************/
+
 function ajax(url) {
   return new Promise((resolve, reject) => {
     let req = new XMLHttpRequest();
@@ -16,6 +28,8 @@ function ajax(url) {
 
 
 function renderProduct(meuble, type) {
+// Création du bloc HTML grâce au Template String
+// Ajout du type pour cibler sur List ou Single
   if(type == "List") {
     return `
       <div class="card">
@@ -32,14 +46,14 @@ function renderProduct(meuble, type) {
         `
   }
   if(type == "Single") {
-    
+  // Création d'une boucle pour afficher toutes les options de vernis
     let htmlOptions = '';
 
     for (let i = 0; i < meuble.varnish.length; i++) {
       console.log(meuble.varnish)
       htmlOptions += `<option>${meuble.varnish[i]}<option>`
     }
-
+  // Création du bloc HTML grâce au Template String
     return`
       <div class="card__single-product">
         <div class="card__left-side">
@@ -60,6 +74,11 @@ function renderProduct(meuble, type) {
   }
 }
 
+/***********************************************
+  Création de fonctions permettant d'afficher
+  ou de cacher un élément
+ ***********************************************/
+
 function show(id) {
   document.getElementById(id).style.display = 'block';
 }
@@ -67,6 +86,11 @@ function show(id) {
 function hide(id) {
   document.getElementById(id).style.display = 'none';
 }
+
+/***********************************************
+  Création de fonctions permettant d'activer
+  ou de désactiver un bouton
+ ***********************************************/
 
 function disableButton(id) {
   document.getElementById(id).disabled = true;

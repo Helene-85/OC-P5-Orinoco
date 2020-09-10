@@ -1,5 +1,6 @@
 .product__single {
     max-width: 1200px;
+    min-height: 600px;
     display: flex;
     padding-left: 30px;
     padding-right: 30px;
@@ -53,8 +54,8 @@ button {
     font-weight: 14px;
     padding: 0px 10px;
     letter-spacing: 0.5px;
-    height: 45px;
-    line-height: 45px;
+    height: 35px;
+    line-height: 35px;
     text-transform: uppercase;
     &:hover {
         background: 0px center #616161;
