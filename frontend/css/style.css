@@ -174,6 +174,71 @@ button:hover {
   background: 0px center #616161;
 }
 
+.main-order {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.recap-order {
+  text-align: left;
+}
+
+.cart__single-product {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.cart__left-side {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+.cart__left-side .cart__single-img {
+  width: 200px;
+}
+
+.total__coast-title {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.cart__right-side {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cart__right-side .cart__single-name {
+  margin-bottom: 20px;
+}
+.cart__right-side .cart__single-price {
+  font-style: italic;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+.rigth-side {
+  width: 40%;
+  text-align: left;
+}
+.rigth-side .order__title {
+  margin-bottom: 50px;
+}
+
+.firstname, .lastname, .email, .phonenumber, .adress, .zip, .city {
+  display: flex;
+  flex-direction: column;
+}
+.firstname input, .lastname input, .email input, .phonenumber input, .adress input, .zip input, .city input {
+  min-width: 250px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 body, h1, h2, h3, h4, h5, p {
   margin: 0;
 }

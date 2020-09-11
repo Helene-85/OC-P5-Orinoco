@@ -8,6 +8,7 @@
         <script src="https://kit.fontawesome.com/845f360e8f.js" crossorigin="anonymous"></script>
         <script src="../js/utils.js" defer></script>
         <script src="../js/storage.js" defer></script>
+        <script src="../js/cart.js" defer></script>
         <title>Meubles en chêne - Orinoco</title>
     </head>
     <body>
@@ -26,13 +27,17 @@
                     </div>
                 </nav>
             </header>
-            <main>
-                <div class="cart-left-side">
-                    <div class="produits" id="product-card"></div>
+            <main class="main-order">
+                <div class="left-side">
+                    <h2 class="recap-order">Détail de votre commande</h2>
+                    <div class="produits" id="productCart"></div>
+                    <div class="total__coast">
+                        <h3 class="total__coast-title" id="totalCoast">Montant Total = </h3>
+                    </div>
                 </div>
-                <div class="class-rigth-side">
+                <div class="rigth-side">
                     <div class="order">
-                        <h3 class="order__title">Validez votre commande</h3>
+                        <h2 class="order__title">Vos informations</h2>
                         <form class="order__form">
                             <div class="firstname">
                                 <label for="firstName" class="firstname-label">Prénom</label>

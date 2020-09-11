@@ -1,3 +1,3 @@
-function has(_products) {
+function has() {
     return localStorage.getItem('products');
 }

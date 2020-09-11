@@ -72,6 +72,23 @@ function renderProduct(meuble, type) {
       </div>
         `
   }
+  if (type == "Cart") {
+    return`
+      <div class="cart__single-product">
+        <div class="cart__left-side">
+          <img 
+          class="cart__single-img" 
+          src="${meuble.imageUrl}" 
+          alt="meuble en chêne"
+          />
+        </div>
+        <div class="cart__right-side">
+          <h3 class="cart__single-name">${meuble.name}<h3>
+          <p class="cart__single-price">${meuble.price / 100},00€</p>
+        </div>
+      </div>
+        `
+  }
 }
 
 /***********************************************
