@@ -155,7 +155,7 @@ footer a {
   letter-spacing: 1px;
 }
 
-button {
+.card__single-btn {
   margin-top: 50px;
   cursor: pointer;
   border: 0px;
@@ -170,7 +170,7 @@ button {
   line-height: 35px;
   text-transform: uppercase;
 }
-button:hover {
+.card__single-btn:hover {
   background: 0px center #616161;
 }
 
@@ -231,22 +231,91 @@ button:hover {
 }
 
 .rigth-side {
+  background-color: #f3e9f1;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #a8cdf7;
   width: 40%;
   text-align: left;
 }
 .rigth-side .order__title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
-.firstname, .lastname, .email, .phonenumber, .adress, .zip, .city {
-  display: flex;
-  flex-direction: column;
+.form {
+  padding: 30px 40px;
 }
-.firstname input, .lastname input, .email input, .phonenumber input, .adress input, .zip input, .city input {
-  min-width: 250px;
-  height: 30px;
-  margin-top: 5px;
+
+.form-control {
+  padding-bottom: 20px;
   margin-bottom: 10px;
+  position: relative;
+}
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+  width: 90%;
+}
+.form-control .fa-check-circle, .form-control .fa-exclamation-circle {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  visibility: hidden;
+}
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control.success .fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.form-control.error .fa-exclamation-circle {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 9.5px;
+  background: 0px center #2b2b2b;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  padding: 0px 10px;
+  letter-spacing: 0.5px;
+  height: 35px;
+  text-transform: uppercase;
+}
+.submit-button:hover {
+  background: 0px center #616161;
 }
 
 body, h1, h2, h3, h4, h5, p {

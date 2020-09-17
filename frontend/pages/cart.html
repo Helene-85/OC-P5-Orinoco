@@ -9,6 +9,7 @@
         <script src="../js/utils.js" defer></script>
         <script src="../js/storage.js" defer></script>
         <script src="../js/cart.js" defer></script>
+        <script src="../js/form.js" defer></script>
         <title>Meubles en chêne - Orinoco</title>
     </head>
     <body>
@@ -32,43 +33,50 @@
                     <h2 class="recap-order">Détail de votre commande</h2>
                     <div class="produits" id="productCart"></div>
                     <div class="total__coast">
-                        <h3 class="total__coast-title" id="totalCoast">Montant Total = </h3>
+                        <h3 class="total__coast-title" id="totalCoast">Prix total : </h3>
                     </div>
                 </div>
                 <div class="rigth-side">
                     <div class="order">
                         <h2 class="order__title">Vos informations</h2>
-                        <form class="order__form">
-                            <div class="firstname">
+                        <form action="" method="POST" role="form" class="order__form" id="orderForm">
+                            <div class="form-control">
                                 <label for="firstName" class="firstname-label">Prénom</label>
-                                <input type="text" class="firstname-input" id="inputFirstName" placeholder="Prénom" required/>
+                                <input id="inputFirstName" name="firstName" type="text" class="firstname-input" placeholder="Prénom" required/>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
                             </div>
-                            <div class="lastname">
+                            <div class="form-control">
                                 <label for="lastName" class="lastname-label">Nom</label>
-                                <input type="text" class="lastname-input" id="inputLastName" placeholder="Nom" required/>
+                                <input id="inputLastName" name="lastName" type="text" class="lastname-input" placeholder="Nom" required/>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
                             </div>
-                            <div class="email">
-                                <label for="inputEmail" class="email-label">Email</label>
-                                <input type="email" class="email-input" id="inputEmail" placeholder="xxx@yyy.zzz" required/>
-                            </div>
-                            <div class="phonenumber">
-                                <label for="phoneNumber" class="phone-label">Téléphone</label>
-                                <input type="tel" maxlength="10" class="phone-input" id="phoneNumber" placeholder="0000000000" required/>
-                            </div>
-                            <div class="adress">
+                            <div class="form-control">
                                 <label for="inputAdress" class="adress-label">Adresse</label>
-                                <input type="text" class="adress-input" id="adress" placeholder="10 rue du Paradis" required/>
+                                <input id="adress" name="inputAdress" type="text" class="adress-input" placeholder="10, rue du Paradis" required/>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
                             </div>
-                            <div class="zip">
-                                <label for="inputZip" class="zip-label">Code postal</label>
-                                <input type="text" class="zip-input" id="zip" placeholder="75000" required>
-                            </div>
-                            <div class="city">
+                            <div class="form-control">
                                 <label for="inputCity" class="city-label">Ville</label>
-                                <input type="text" class="city-input" id="city" placeholder="Paris" required>
+                                <input id="city" name="inputCity" type="text" class="city-input" placeholder="Paris" required>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-control">
+                                <label for="inputEmail" class="email-label">Email</label>
+                                <input id="inputEmail" name="inputEmail" type="email" class="email-input" placeholder="xxx@yyy.zzz" required/>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
                             </div>
                             <div class="submission">
-                                <button class="submit-button">Commander</button>
+                                <button type="submit" class="submit-button">Commander</button>
                             </div>
                         </form>
                     </div>
