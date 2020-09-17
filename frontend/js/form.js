@@ -25,6 +25,17 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     checkInputs();
+
+    /* let newContact = new Contact(
+        firstName.value,
+        lastName.value,
+        adress.value,
+        city.value,
+        email.value
+        );
+        
+    POST à l'API ?
+        */
 });
 
 function checkInputs() {
