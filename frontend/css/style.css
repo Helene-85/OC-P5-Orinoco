@@ -199,14 +199,9 @@ footer a {
 .cart__left-side .cart__single-img {
   width: 200px;
 }
-.empty__cart-msg {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding: 5px;
-  border: solid 1px black;
-  font-style: italic;
-  font-weight: lighter;
-  color: red;
+
+.fa-trash {
+  margin-top: 20px;
 }
 
 .total__cost-title {
