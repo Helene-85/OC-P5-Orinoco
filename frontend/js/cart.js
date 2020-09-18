@@ -1,9 +1,9 @@
-if (! localStorage.getItem('products')) {
+if (! has('products')) {
     hide('app');
     show('empty'); 
 } else {
     hide('empty');
-    let idsInCart =  JSON.parse(localStorage.getItem('products'));
+    let idsInCart =  get('products');
     let total = 0;
     ajax("http://localhost:3000/api/furniture").then((products) => {
         products.forEach((product) => {
@@ -13,6 +13,13 @@ if (! localStorage.getItem('products')) {
                 displayTotal(total);
                 listenForCartEmptying();
             }
+        });
+        document.getElementById('orderForm').addEventListener('submit', (e) => {
+            e.preventDefault()
+            submitForm().then((e) => {
+                console.log('Retour du backend')
+                console.log(e)
+            });
         });
     })
 }

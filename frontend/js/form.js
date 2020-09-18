@@ -1,42 +1,35 @@
 // Création de l'object contact en prévision de l'envoi au serveur
-
-class contact {
-    constructor(firstName, lastName, adress, city, email) {
-        (this.firstName = firstName),
-        (this.lastName = lastName),
-        (this.adress = adress),
-        (this.city = city),
-        (this.email = email);
-    }
-}
-
 // On récupère les emplacements des éléments dans le DOM
-
-const form = document.getElementById('orderForm');
-const firstName = document.getElementById('inputFirstName');
-const lastName = document.getElementById('inputLastName');
-const email = document.getElementById('inputEmail');
-const adress = document.getElementById('adress');
-const city = document.getElementById('city');
-
 // On écoute le click sur submit pour éxécuter la fonction checkInputs()
-
-form.addEventListener('submit', (e) => {
+function submitForm() {
     e.preventDefault();
-
     checkInputs();
+    let payload = {
+        products : get('products'),
+        contact: {
+            firstName: document.getElementById('inputFirstName').value,
+            lastName: document.getElementById('inputLastName').value,
+            adress: document.getElementById('adress').value,
+            city: document.getElementById('city').value,
+            email: document.getElementById('inputEmail').value,
+        }
+    };
+    console.log(payload);
+    return new Promise((resolve, reject) => {
+        let req = new XMLHttpRequest();
+        req.open("POST", "http://localhost:3000/api/furniture/order");
+        req.addEventListener("load", function() {
+        if(req.status >=200) {
+            resolve(JSON.parse(req.responseText));
+        } else {
+            reject(req.statusText);
+        }
+        });
+        req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        req.send(payload);
+      })
+};
 
-    /* let newContact = new Contact(
-        firstName.value,
-        lastName.value,
-        adress.value,
-        city.value,
-        email.value
-        );
-        
-    POST à l'API ?
-        */
-});
 
 function checkInputs() {
     // On récupère les inputs

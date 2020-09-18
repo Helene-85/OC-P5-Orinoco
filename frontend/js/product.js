@@ -17,8 +17,8 @@ ajax("http://localhost:3000/api/furniture/" + getIdFromUrl())
     displayProduct(meuble);
     show('addToCartButton');
 // localStorage.getItem permet de récupérer les données
-    if (localStorage.getItem('products')) {
-        products = JSON.parse(localStorage.getItem('products'));
+    if (has('products')) {
+        products = get('products');
     } else {
         products = [];
     }
@@ -65,14 +65,14 @@ function getIdFromUrl() {
 function listenForCartAddition() {
     document.getElementById('addToCartButton').addEventListener('click', () => {
         alert('Article ajouté au panier');
-        if (localStorage.getItem('products')) {
-            products = JSON.parse(localStorage.getItem('products'));
+        if (has('products')) {
+            products = get('products');
         } else {
             products = [];
         }
 
         products.push(getIdFromUrl());
-        localStorage.setItem('products', JSON.stringify(products));
+        store('products', products);
         disableButton('addToCartButton')
     });
 }
