@@ -51,7 +51,7 @@ function renderProduct(meuble, type) {
 
     for (let i = 0; i < meuble.varnish.length; i++) {
       console.log(meuble.varnish)
-      htmlOptions += `<option>${meuble.varnish[i]}<option>`
+      htmlOptions += `<option>${meuble.varnish[i]}</option>`
     }
   // Création du bloc HTML grâce au Template String
     return`

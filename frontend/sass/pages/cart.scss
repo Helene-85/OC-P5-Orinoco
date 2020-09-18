@@ -23,6 +23,9 @@
     & .cart__single-img {
         width: 200px;
     }
+    & .clear__cart-button {
+
+    }
 }
 
 .empty__cart-msg {
@@ -35,9 +38,9 @@
     color: red;
 }
 
-.total__coast-title {
+.total__cost-title {
     margin-top: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 .cart__right-side {
@@ -49,7 +52,6 @@
     & .cart__single-price {
         font-style: italic;
         font-size: 1em;
-        letter-spacing: 1px;
         font-weight: lighter;
     }
 }
@@ -123,7 +125,7 @@
     color: #e74c3c;
 }
 
-.submit-button {
+.cart__button {
     width: 100%;
     margin-top: 20px;
     cursor: pointer;

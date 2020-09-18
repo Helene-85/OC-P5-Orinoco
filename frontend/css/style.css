@@ -200,7 +200,6 @@ footer a {
 .cart__left-side .cart__single-img {
   width: 200px;
 }
-
 .empty__cart-msg {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -211,9 +210,9 @@ footer a {
   color: red;
 }
 
-.total__coast-title {
+.total__cost-title {
   margin-top: 30px;
-  text-align: left;
+  text-align: center;
 }
 
 .cart__right-side {
@@ -226,7 +225,6 @@ footer a {
 .cart__right-side .cart__single-price {
   font-style: italic;
   font-size: 1em;
-  letter-spacing: 1px;
   font-weight: lighter;
 }
 
@@ -299,7 +297,7 @@ footer a {
   color: #e74c3c;
 }
 
-.submit-button {
+.cart__button {
   width: 100%;
   margin-top: 20px;
   cursor: pointer;
@@ -314,7 +312,7 @@ footer a {
   height: 35px;
   text-transform: uppercase;
 }
-.submit-button:hover {
+.cart__button:hover {
   background: 0px center #616161;
 }
 
