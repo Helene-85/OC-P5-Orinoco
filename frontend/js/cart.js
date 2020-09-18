@@ -12,6 +12,7 @@ if (! has('products')) {
                 displayProduct(product);
                 displayTotal(total);
                 listenForCartEmptying();
+                listenForItemRemoving();
             }
         });
         document.getElementById('orderForm').addEventListener('submit', (e) => {
@@ -27,6 +28,13 @@ if (! has('products')) {
 function listenForCartEmptying() {
     document.getElementById('clear').addEventListener('click', () => {
         localStorage.clear();
+        location.reload();
+    })
+}
+
+function listenForItemRemoving() {
+    document.getElementById('remove').addEventListener('click', () => {
+        localStorage.removeItem('product');
         location.reload();
     })
 }

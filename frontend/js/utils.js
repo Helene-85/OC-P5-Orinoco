@@ -83,6 +83,7 @@ function renderProduct(meuble, type) {
           />
         </div>
         <div class="cart__right-side">
+          <a id="remove"><i class="fas fa-trash"></i></a>
           <h3 class="cart__single-name">${meuble.name}<h3>
           <p class="cart__single-price">${meuble.price / 100},00€</p>
         </div>
