@@ -46,6 +46,23 @@
     }
 }
 
+.empty__cart {
+    margin: auto;
+    margin-top: 150px;
+    background-color: $primary-color;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #a8cdf7;
+    width: 40%;
+    & h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-text;
+        font-weight: lighter;
+        color: $main-title-color;
+    }
+}
+
 .rigth-side {
     background-color: $primary-color;
     padding: 15px;

@@ -17,9 +17,9 @@ if (! has('products')) {
         });
         document.getElementById('orderForm').addEventListener('submit', (e) => {
             e.preventDefault()
-            submitForm().then((e) => {
+            submitForm(e).then((response) => {
                 console.log('Retour du backend')
-                console.log(e)
+                console.log(response)
             });
         });
     })
@@ -34,7 +34,7 @@ function listenForCartEmptying() {
 
 function listenForItemRemoving() {
     document.getElementById('remove').addEventListener('click', () => {
-        localStorage.removeItem('product');
+        localStorage.removeItem('products');
         location.reload();
     })
 }

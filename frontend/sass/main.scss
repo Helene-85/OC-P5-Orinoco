@@ -18,6 +18,7 @@ body {
 
 main {
     max-width: 1440px;
+    min-height: 1300px;
     padding-left: 30px;
     padding-right: 30px;
     display: flex; 
@@ -25,7 +26,6 @@ main {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 50px;
     font-family: 'OpenSansLigt', sans-serif;
     text-align: center;
     & h1 {
