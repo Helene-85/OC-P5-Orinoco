@@ -1,7 +1,7 @@
 // Création de l'object contact en prévision de l'envoi au serveur
 // On récupère les emplacements des éléments dans le DOM
 // On écoute le click sur submit pour éxécuter la fonction checkInputs()
-function submitForm() {
+function submitForm(e) {
     e.preventDefault();
     checkInputs();
     let payload = {
@@ -19,11 +19,11 @@ function submitForm() {
         let req = new XMLHttpRequest();
         req.open("POST", "http://localhost:3000/api/furniture/order");
         req.addEventListener("load", function() {
-        if(req.status >=200) {
-            resolve(JSON.parse(req.responseText));
-        } else {
-            reject(req.statusText);
-        }
+            if(req.status >=200) {
+                resolve(JSON.parse(req.responseText));
+            } else {
+                reject(req.statusText);
+            }
         });
         req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         req.send(payload);
@@ -32,6 +32,11 @@ function submitForm() {
 
 
 function checkInputs() {
+    let firstName = document.getElementById('inputFirstName');
+    let lastName = document.getElementById('inputLastName');
+    let adress = document.getElementById('adress');
+    let city = document.getElementById('city');
+    let email = document.getElementById('inputEmail');
     // On récupère les inputs
     // La méthode trim() retire les blancs de début et fin de chaîne
     const firstNameValue = firstName.value.trim();
