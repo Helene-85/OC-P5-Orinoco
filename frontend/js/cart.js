@@ -10,20 +10,26 @@ if (! has('products')) {
             if (idsInCart.includes(product._id)) {
                 total += product.price
                 displayProduct(product);
-                displayTotal(total);
-                listenForCartEmptying();
-                listenForItemRemoving();
+                listenForItemRemoving(product._id);
             }
         });
-        document.getElementById('orderForm').addEventListener('submit', (e) => {
-            e.preventDefault()
-            submitForm(e).then((response) => {
-                console.log('Retour du backend')
-                console.log(response)
-            });
-        });
+
+        listenForCartEmptying();
+        displayTotal(total);
+        listenForCartSubmission();
     })
 }
+
+function listenForCartSubmission() {
+    document.getElementById('orderForm').addEventListener('submit', (e) => {
+        e.preventDefault()
+        submitForm().then((response) => {
+            console.log('Retour du backend')
+            console.log(response)
+        });
+    });
+}
+
 
 function listenForCartEmptying() {
     document.getElementById('clear').addEventListener('click', () => {
@@ -32,8 +38,12 @@ function listenForCartEmptying() {
     })
 }
 
-function listenForItemRemoving() {
-    document.getElementById('remove').addEventListener('click', () => {
+function listenForItemRemoving(id) {
+    document.getElementById('remove-' + id).addEventListener('click', () => {
+        // on  récupère les id du storage
+        // on retire l'identifiant du pdt du tableau récupéré
+        // mis a jour le nouveau tableau avec un id en moins
+        // store('products' nouveau tableau)
         localStorage.removeItem('products');
         location.reload();
     })

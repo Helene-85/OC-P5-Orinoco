@@ -1,15 +1,14 @@
 // Création de l'object contact en prévision de l'envoi au serveur
 // On récupère les emplacements des éléments dans le DOM
 // On écoute le click sur submit pour éxécuter la fonction checkInputs()
-function submitForm(e) {
-    e.preventDefault();
+function submitForm() {
     checkInputs();
     let payload = {
         products : get('products'),
         contact: {
             firstName: document.getElementById('inputFirstName').value,
             lastName: document.getElementById('inputLastName').value,
-            adress: document.getElementById('adress').value,
+            address: document.getElementById('address').value,
             city: document.getElementById('city').value,
             email: document.getElementById('inputEmail').value,
         }
@@ -26,7 +25,7 @@ function submitForm(e) {
             }
         });
         req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        req.send(payload);
+        req.send(JSON.stringify(payload));
       })
 };
 
@@ -34,14 +33,14 @@ function submitForm(e) {
 function checkInputs() {
     let firstName = document.getElementById('inputFirstName');
     let lastName = document.getElementById('inputLastName');
-    let adress = document.getElementById('adress');
+    let address = document.getElementById('address');
     let city = document.getElementById('city');
     let email = document.getElementById('inputEmail');
     // On récupère les inputs
     // La méthode trim() retire les blancs de début et fin de chaîne
     const firstNameValue = firstName.value.trim();
     const lastNameValue = lastName.value.trim();
-    const adressValue = adress.value.trim();
+    const addressValue = address.value.trim();
     const cityValue = city.value.trim();
     const emailValue = email.value.trim();
 
@@ -64,12 +63,12 @@ function checkInputs() {
             setSuccesFor(lastName);
         }
 
-    if(adressValue === '') {
-        setErrorFor(adress, 'Veuillez remplir avec votre adresse');
-    } else if(!isAdress(adressValue)) {
-        setErrorFor(adress, 'Votre adresse n\'est pas valide');
+    if(addressValue === '') {
+        setErrorFor(address, 'Veuillez remplir avec votre addresse');
+    } else if(!isaddress(addressValue)) {
+        setErrorFor(address, 'Votre addresse n\'est pas valide');
     } else {
-        setSuccesFor(adress);
+        setSuccesFor(address);
     }
 
     if(cityValue === '') {
@@ -129,8 +128,8 @@ function isLastName(lastName) {
     return /^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/.test(lastName);
 }
 
-function isAdress(adress) {
-    return /^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/.test(adress);
+function isaddress(address) {
+    return /^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/.test(address);
 }
 
 function isCity(city) {
