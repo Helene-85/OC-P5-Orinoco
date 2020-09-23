@@ -22,7 +22,7 @@ if (isCartEmpty()) {
         listenForCartEmptying();
         displayTotal(total);
         listenForCartSubmission();
-        document.getElementById('inputFirstname').focus();
+        /* document.getElementById('inputFirstname').focus(0); */
     })
 }
 
