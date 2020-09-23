@@ -30,7 +30,7 @@ function listenForCartSubmission() {
     document.getElementById('orderForm').addEventListener('submit', (e) => {
         e.preventDefault();
         checkInputs();
-        
+
         if (!isFormValid()) {
             alert('Merci de bien remplir le formulaire')
             return;
@@ -56,8 +56,8 @@ function listenForItemRemoving(id) {
         products.splice(index, 1);
         store('products', products);
         location.reload();
-});
-
+    });
+}
 
 function displayTotal(total) {
     document.getElementById('totalCost').innerHTML = 'Prix total = ' + total / 100 + ',00€';

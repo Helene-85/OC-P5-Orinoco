@@ -26,7 +26,6 @@ function ajax(url) {
   })
 }
 
-
 function renderProduct(meuble, type) {
 // Création du bloc HTML grâce au Template String
 // Ajout du type pour cibler sur List ou Single
