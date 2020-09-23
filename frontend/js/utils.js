@@ -123,12 +123,12 @@ function isCartEmpty() {
 
 /***********************************************
   La fonction getDataFromUrl permet de récupérer
-  l'id du produit 
+  les données ciblées par l'id passé en paramètre
  ***********************************************/
 
-function getDataFromUrl(id) {
+function getDataFromUrl(param) {
   let urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(id);
+  return urlParams.get(param);
 }
 
 /***********************************************
