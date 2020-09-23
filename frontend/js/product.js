@@ -1,3 +1,5 @@
+displayTotalOfProducts();
+
 /***********************************************
   Appels des fonctions hide et disableButton
   pour l'id addToCartButton
@@ -9,10 +11,10 @@ disableButton('addToCartButton');
 /***********************************************
   Appel de la fonction ajax située dans utils.js
   l'url est récupéré dans le localStorage grâce 
-  à l'appel de la fonction getIdFromUrl 
+  à l'appel de la fonction getDataFromUrl 
  ***********************************************/
 
-ajax("http://localhost:3000/api/furniture/" + getIdFromUrl())
+ajax("http://localhost:3000/api/furniture/" + getDataFromUrl())
 .then((meuble) => {
     displayProduct(meuble);
     show('addToCartButton');
@@ -27,7 +29,7 @@ ajax("http://localhost:3000/api/furniture/" + getIdFromUrl())
     est désactivé grâce à la fonction
     enableButton située dans utils.js
  ***********************************************/
-    if (! products.includes(getIdFromUrl())) {
+    if (! products.includes(getDataFromUrl())) {
         enableButton('addToCartButton');
         listenForCartAddition();
     }
@@ -46,16 +48,6 @@ function displayProduct(meuble) {
 };
 
 /***********************************************
-  La fonction getIdFromUrl permet de récupérer
-  l'id du produit 
- ***********************************************/
-
-function getIdFromUrl() {
-    let urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get("id");
-}
-
-/***********************************************
   La fonction listenForCartAddition écoute le
   clic de l'utilisateur afin d'ajouter le produit
   dans la localStorage puis de désactiver le
@@ -71,8 +63,9 @@ function listenForCartAddition() {
             products = [];
         }
 
-        products.push(getIdFromUrl());
+        products.push(getDataFromUrl());
         store('products', products);
         disableButton('addToCartButton')
+        displayTotalOfProducts();
     });
 }

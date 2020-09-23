@@ -23,7 +23,10 @@
                     <div class="navbar__nav" role="navigation">
                         <a class="navbar__nav-link" href="../index.html">Accueil</a>
                         <a class="navbar__nav-link" href="../pages/cart.html">Panier</a>
-                        <a href="../pages/panier.html" alt="Mon panier"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="cart.html" alt="Mon panier">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id='totalProducts'>0</span>
+                        </a>
                     </div>
                 </nav>
             </header>
@@ -48,35 +51,35 @@
                                     <form action="" method="POST" role="form" class="order__form" id="orderForm">
                                         <div class="form-control">
                                             <label for="firstName" class="firstname-label">Prénom</label>
-                                            <input id="inputFirstName" name="firstName" type="text" class="firstname-input" placeholder="Prénom" required/>
+                                            <input tab="0" id="inputFirstName" name="firstName" type="text" class="firstname-input" placeholder="Prénom" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
                                             <label for="lastName" class="lastname-label">Nom</label>
-                                            <input id="inputLastName" name="lastName" type="text" class="lastname-input" placeholder="Nom" required/>
+                                            <input tab="1" id="inputLastName" name="lastName" type="text" class="lastname-input" placeholder="Nom" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
                                             <label for="inputAddress" class="address-label">Adresse</label>
-                                            <input id="address" name="inputAddress" type="text" class="address-input" placeholder="10, rue du Paradis" required/>
+                                            <input tab="2" id="address" name="inputAddress" type="text" class="address-input" placeholder="10, rue du Paradis" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
                                             <label for="inputCity" class="city-label">Ville</label>
-                                            <input id="city" name="inputCity" type="text" class="city-input" placeholder="Paris" required>
+                                            <input tab="3" id="city" name="inputCity" type="text" class="city-input" placeholder="Paris" required>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
                                             <label for="inputEmail" class="email-label">Email</label>
-                                            <input id="inputEmail" name="inputEmail" type="email" class="email-input" placeholder="xxx@yyy.zzz" required/>
+                                            <input tab="4" id="inputEmail" name="inputEmail" type="email" class="email-input" placeholder="xxx@yyy.zzz" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>

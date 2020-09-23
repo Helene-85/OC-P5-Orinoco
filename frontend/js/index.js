@@ -1,3 +1,5 @@
+displayTotalOfProducts();
+
 /***********************************************
   Appel de la fonction ajax située dans utils.js
   Création d'une boucle forEach afin d'afficher 

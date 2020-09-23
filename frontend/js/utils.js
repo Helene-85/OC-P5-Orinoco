@@ -85,7 +85,7 @@ function renderProduct(meuble, type) {
         <div class="cart__right-side">
           <h3 class="cart__single-name">${meuble.name}<h3>
           <p class="cart__single-price">${meuble.price / 100},00€</p>
-          <a id="remove-${meuble._id}"><i class="fas fa-trash"></i></a>
+          <button id="remove-${meuble._id}"><i class="fas fa-trash"></i></button>
         </div>
       </div>
         `
@@ -105,6 +105,33 @@ function hide(id) {
   document.getElementById(id).style.display = 'none';
 }
 
+function displayTotalOfProducts() {
+  let qty = countQtyOfProductsInCart();
+  document.getElementById('totalProducts').innerHTML = qty;
+}
+
+function countQtyOfProductsInCart() {
+  if (isCartEmpty()) {
+    return 0;
+  }
+
+  return get('products').length
+}
+
+function isCartEmpty() {
+  return (!has('products') || get('products').length == 0);
+}
+
+/***********************************************
+  La fonction getDataFromUrl permet de récupérer
+  l'id du produit 
+ ***********************************************/
+
+function getDataFromUrl(id) {
+  let urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(id);
+}
+
 /***********************************************
   Création de fonctions permettant d'activer
   ou de désactiver un bouton
@@ -112,8 +139,10 @@ function hide(id) {
 
 function disableButton(id) {
   document.getElementById(id).disabled = true;
+  document.getElementById(id).innerHTML = "Produit déjà ajouté"
 }
 
 function enableButton(id) {
   document.getElementById(id).disabled = false;
+  document.getElementById(id).innerHTML = "Ajouter le produit"
 }

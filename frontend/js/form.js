@@ -2,7 +2,6 @@
 // On récupère les emplacements des éléments dans le DOM
 // On écoute le click sur submit pour éxécuter la fonction checkInputs()
 function submitForm() {
-    checkInputs();
     let payload = {
         products : get('products'),
         contact: {
@@ -29,6 +28,9 @@ function submitForm() {
       })
 };
 
+function isFormValid() {
+    return (document.getElementsByClassName('form-control error').length == 0)
+}
 
 function checkInputs() {
     let firstName = document.getElementById('inputFirstName');

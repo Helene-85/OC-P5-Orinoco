@@ -1,31 +1,42 @@
-if (! has('products')) {
+displayTotalOfProducts();
+
+if (isCartEmpty()) {
     hide('app');
     show('empty'); 
 } else {
     hide('empty');
-    let idsInCart =  get('products');
+    let idsInCart = get('products');
     let total = 0;
     ajax("http://localhost:3000/api/furniture").then((products) => {
         products.forEach((product) => {
             if (idsInCart.includes(product._id)) {
                 total += product.price
                 displayProduct(product);
-                listenForItemRemoving(product._id);
             }
         });
+
+        idsInCart.forEach((id) => {
+            listenForItemRemoving(id);
+        })
 
         listenForCartEmptying();
         displayTotal(total);
         listenForCartSubmission();
+        document.getElementById('inputFirstname').focus();
     })
 }
 
 function listenForCartSubmission() {
     document.getElementById('orderForm').addEventListener('submit', (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        checkInputs();
+        
+        if (!isFormValid()) {
+            alert('Merci de bien remplir le formulaire')
+            return;
+        }
         submitForm().then((response) => {
-            console.log('Retour du backend')
-            console.log(response)
+            window.location.href = 'cart.html?order=' + response.orderId
         });
     });
 }
@@ -40,14 +51,13 @@ function listenForCartEmptying() {
 
 function listenForItemRemoving(id) {
     document.getElementById('remove-' + id).addEventListener('click', () => {
-        // on  récupère les id du storage
-        // on retire l'identifiant du pdt du tableau récupéré
-        // mis a jour le nouveau tableau avec un id en moins
-        // store('products' nouveau tableau)
-        localStorage.removeItem('products');
+        products = get('products');
+        let index = products.indexOf(products, id);
+        products.splice(index, 1);
+        store('products', products);
         location.reload();
-    })
-}
+});
+
 
 function displayTotal(total) {
     document.getElementById('totalCost').innerHTML = 'Prix total = ' + total / 100 + ',00€';
@@ -55,6 +65,4 @@ function displayTotal(total) {
 
 function displayProduct(product) {
     document.getElementById('productCart').innerHTML += renderProduct(product, "Cart");
-    };
-
-
+}
