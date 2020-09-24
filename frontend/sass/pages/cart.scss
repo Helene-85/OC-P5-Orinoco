@@ -9,6 +9,18 @@
         }
 }
 
+.suppr {
+    background: 0px center white;
+    color:  rgb(43, 43, 43);
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 0px 5px 10px;
+    border: #f0f0f0;
+    &:hover {
+        background: 0px center $primary-color;
+    }
+}
+
 .recap-order {
     text-align: left;
 }
