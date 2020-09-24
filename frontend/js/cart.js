@@ -36,7 +36,7 @@ function listenForCartSubmission() {
             return;
         }
         submitForm().then((response) => {
-            window.location.href = 'cart.html?order=' + response.orderId
+            window.location.href = 'order.html?order=' + response.orderId + `<h1 class="merci">Merci pour votre commande !</h1>`
         });
     });
 }
