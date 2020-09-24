@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta description="Découvrez les meubles en chêne masif en vente chez Orinoco. Presonnalisez vos meubles en choisissant le style de vernis qui vous ressemble !">
         <link rel="stylesheet" href="../css/style.css" />
         <script src="https://kit.fontawesome.com/845f360e8f.js" crossorigin="anonymous"></script>
         <script src="../js/utils.js" defer></script>
@@ -23,7 +22,7 @@
                     <div class="navbar__nav" role="navigation">
                         <a class="navbar__nav-link" href="../index.html">Accueil</a>
                         <a class="navbar__nav-link" href="../pages/cart.html">Panier</a>
-                        <a href="cart.html" alt="Mon panier">
+                        <a href="cart.html">
                             <i class="fas fa-shopping-cart"></i>
                             <span id='totalProducts'>0</span>
                         </a>
@@ -48,38 +47,38 @@
                             <div class="rigth-side">
                                 <div class="order">
                                     <h2 class="order__title">Vos informations</h2>
-                                    <form action="" method="POST" role="form" class="order__form" id="orderForm">
+                                    <form method="POST" class="order__form" id="orderForm">
                                         <div class="form-control">
-                                            <label for="firstName" class="firstname-label">Prénom</label>
-                                            <input tab="0" id="inputFirstName" name="firstName" type="text" class="firstname-input" placeholder="Prénom" required/>
+                                            <label for="inputFirstName" class="firstname-label">Prénom</label>
+                                            <input id="inputFirstName" name="firstName" type="text" class="firstname-input" placeholder="Prénom" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
-                                            <label for="lastName" class="lastname-label">Nom</label>
-                                            <input tab="1" id="inputLastName" name="lastName" type="text" class="lastname-input" placeholder="Nom" required/>
+                                            <label for="inputLastName" class="lastname-label">Nom</label>
+                                            <input id="inputLastName" name="lastName" type="text" class="lastname-input" placeholder="Nom" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
-                                            <label for="inputAddress" class="address-label">Adresse</label>
-                                            <input tab="2" id="address" name="inputAddress" type="text" class="address-input" placeholder="10, rue du Paradis" required/>
+                                            <label for="address" class="address-label">Adresse</label>
+                                            <input id="address" name="inputAddress" type="text" class="address-input" placeholder="10, rue du Paradis" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
-                                            <label for="inputCity" class="city-label">Ville</label>
-                                            <input tab="3" id="city" name="inputCity" type="text" class="city-input" placeholder="Paris" required>
+                                            <label for="city" class="city-label">Ville</label>
+                                            <input id="city" name="inputCity" type="text" class="city-input" placeholder="Paris" required>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
                                         </div>
                                         <div class="form-control">
                                             <label for="inputEmail" class="email-label">Email</label>
-                                            <input tab="4" id="inputEmail" name="inputEmail" type="email" class="email-input" placeholder="xxx@yyy.zzz" required/>
+                                            <input id="inputEmail" name="inputEmail" type="email" class="email-input" placeholder="xxx@yyy.zzz" required/>
                                             <i class="fas fa-check-circle"></i>
                                             <i class="fas fa-exclamation-circle"></i>
                                             <small>Error message</small>
