@@ -4,6 +4,9 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        }
 }
 
 .recap-order {
@@ -22,6 +25,11 @@
     width: 60%;
     & .cart__single-img {
         width: 200px;
+    }
+    @media screen and (max-width: 768px) {
+        .cart__single-img{
+            width: 150px;
+        }
     }
 }
 
@@ -73,6 +81,10 @@
     & .order__title {
         margin-bottom: 30px; 
     }
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        width: 90%;
+     }
 }
 
 .form {
