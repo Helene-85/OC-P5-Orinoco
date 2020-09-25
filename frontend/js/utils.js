@@ -26,6 +26,58 @@ function ajax(url) {
   })
 }
 
+
+/***********************************************
+  Contrôle si le panier contient des produits
+  Si vide : affiche 0
+  Si rempli : retourne le nombre de produits
+ ***********************************************/
+function countQtyOfProductsInCart() {
+  if (isCartEmpty()) {
+    return 0;
+  }
+
+  return get('products').length
+}
+
+/***********************************************
+  Création de fonctions permettant d'activer
+  ou de désactiver un bouton
+ ***********************************************/
+
+function disableButton(id) {
+  document.getElementById(id).disabled = true;
+  document.getElementById(id).innerHTML = "Produit déjà ajouté"
+}
+
+function displayTotalOfProducts() {
+  let qty = countQtyOfProductsInCart();
+  document.getElementById('totalProducts').innerHTML = qty;
+}
+
+function enableButton(id) {
+  document.getElementById(id).disabled = false;
+  document.getElementById(id).innerHTML = "Ajouter le produit"
+}
+
+/***********************************************
+  La fonction getDataFromUrl permet de récupérer
+  les données ciblées par l'id passé en paramètre
+ ***********************************************/
+
+function getDataFromUrl(param) {
+  let urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function hide(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function isCartEmpty() {
+  return (!has('products') || get('products').length == 0);
+}
+
 function renderProduct(meuble, type) {
 // Création du bloc HTML grâce au Template String
 // Ajout du type pour cibler sur List ou Single
@@ -93,55 +145,9 @@ function renderProduct(meuble, type) {
 
 /***********************************************
   Création de fonctions permettant d'afficher
-  ou de cacher un élément
+  un élément
  ***********************************************/
 
 function show(id) {
   document.getElementById(id).style.display = 'block';
-}
-
-function hide(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
-function displayTotalOfProducts() {
-  let qty = countQtyOfProductsInCart();
-  document.getElementById('totalProducts').innerHTML = qty;
-}
-
-function countQtyOfProductsInCart() {
-  if (isCartEmpty()) {
-    return 0;
-  }
-
-  return get('products').length
-}
-
-function isCartEmpty() {
-  return (!has('products') || get('products').length == 0);
-}
-
-/***********************************************
-  La fonction getDataFromUrl permet de récupérer
-  les données ciblées par l'id passé en paramètre
- ***********************************************/
-
-function getDataFromUrl(param) {
-  let urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
-/***********************************************
-  Création de fonctions permettant d'activer
-  ou de désactiver un bouton
- ***********************************************/
-
-function disableButton(id) {
-  document.getElementById(id).disabled = true;
-  document.getElementById(id).innerHTML = "Produit déjà ajouté"
-}
-
-function enableButton(id) {
-  document.getElementById(id).disabled = false;
-  document.getElementById(id).innerHTML = "Ajouter le produit"
 }

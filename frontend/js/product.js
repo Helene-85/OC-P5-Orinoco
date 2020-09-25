@@ -18,7 +18,7 @@ ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'))
 .then((meuble) => {
     displayProduct(meuble);
     show('addToCartButton');
-// localStorage.getItem permet de récupérer les données
+// la fonction has (utils.js) permet de récupérer les données
     if (has('products')) {
         products = get('products');
     } else {

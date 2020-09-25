@@ -7,9 +7,9 @@ displayTotalOfProducts();
  ***********************************************/
 
 ajax("http://localhost:3000/api/furniture").then((products) => {
-        products.forEach((products) => {
-          displayProduct(products);
-        });
+  products.forEach((products) => {
+    displayProduct(products);
+  });
 })
 
 
