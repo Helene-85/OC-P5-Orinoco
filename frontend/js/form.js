@@ -149,7 +149,11 @@ function submitForm() {
         }
     };
     console.log(payload);
-    return new Promise((resolve, reject) => {
+
+/*     ajax("http://localhost:3000/api/furniture/order", 'POST', 'JSON.stringify(payload)')
+
+}; */
+return new Promise((resolve, reject) => {
         let req = new XMLHttpRequest();
         req.open("POST", "http://localhost:3000/api/furniture/order");
         req.addEventListener("load", function() {

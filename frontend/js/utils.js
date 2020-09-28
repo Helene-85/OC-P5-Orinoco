@@ -10,10 +10,10 @@
   y attacher le callback en cas de rejet 
  ***********************************************/
 
-function ajax(url) {
+function ajax(url, verb, type) {
   return new Promise((resolve, reject) => {
     let req = new XMLHttpRequest();
-    req.open("GET", url);
+    req.open(verb, url);
     req.addEventListener("load", function() {
       if(req.status >=200) {
         resolve(JSON.parse(req.responseText));
@@ -22,7 +22,7 @@ function ajax(url) {
       }
     });
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send();
+    req.send(type);
   })
 }
 

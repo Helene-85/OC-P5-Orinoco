@@ -14,7 +14,7 @@ disableButton('addToCartButton');
   à l'appel de la fonction getDataFromUrl 
  ***********************************************/
 
-ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'))
+ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'), 'GET')
 .then((meuble) => {
     displayProduct(meuble);
     show('addToCartButton');

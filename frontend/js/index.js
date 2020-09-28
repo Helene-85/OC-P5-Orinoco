@@ -6,7 +6,7 @@ displayTotalOfProducts();
   tous les produits
  ***********************************************/
 
-ajax("http://localhost:3000/api/furniture").then((products) => {
+ajax("http://localhost:3000/api/furniture", 'GET').then((products) => {
   products.forEach((products) => {
     displayProduct(products);
   });

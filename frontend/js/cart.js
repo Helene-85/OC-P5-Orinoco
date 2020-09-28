@@ -7,7 +7,7 @@ if (isCartEmpty()) {
     hide('empty');
     let idsInCart = get('products');
     let total = 0;
-    ajax("http://localhost:3000/api/furniture").then((products) => {
+    ajax("http://localhost:3000/api/furniture", 'GET').then((products) => {
         products.forEach((product) => {
             if (idsInCart.includes(product._id)) {
                 total += product.price
