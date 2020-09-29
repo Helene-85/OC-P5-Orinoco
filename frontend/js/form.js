@@ -62,6 +62,11 @@ function checkInputs() {
     }
 }
 
+function getFocus() {
+    document.getElementById("inputFirstName").focus();
+}
+
+document.getElementById("inputFirstName").focus();
 /******************************************************
 On contrôle la conformité des informations données par
 les utilisateurs en excluant une liste de caractère 

@@ -21,7 +21,7 @@ if (isCartEmpty()) {
 
         listenForCartEmptying();
         displayTotal(total);
-        listenForCartSubmission();
+        listenForCartSubmission(total);
     })
 }
 
@@ -32,7 +32,7 @@ function displayProduct(product) {
 
 // On affiche le prix total du panier
 function displayTotal(total) {
-    document.getElementById('totalCost').innerHTML = 'Prix total = ' + total / 100 + ',00€';
+    document.getElementById('totalCost').innerHTML = 'Prix total = ' + (total / 100) + ',00€';
 }
 
 // On écoute le click sur le bouton vider le panier 
@@ -63,7 +63,7 @@ function listenForItemRemoving(id) {
 // On vérifie la conformité des informations
 // Si non conforme on alerte l'utilisateur
 // Si conforme l'order ID est envoyé et affiché sur la page order.html
-function listenForCartSubmission() {
+function listenForCartSubmission(total) {
     document.getElementById('orderForm').addEventListener('submit', (e) => {
         e.preventDefault();
         checkInputs();
@@ -73,7 +73,7 @@ function listenForCartSubmission() {
             return;
         }
         submitForm().then((response) => {
-            window.location.href = 'order.html?order=' + response.orderId + `<h1 class="merci">Merci pour votre commande !</h1>`
+            window.location.href = `order.html?order=${response.orderId}&total=${total}`;
         });
     });
 }

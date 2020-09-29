@@ -365,9 +365,24 @@ footer a {
   background: 0px center #616161;
 }
 
+.order__container {
+  margin: auto;
+  margin-top: 150px;
+  background-color: #f3e9f1;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #a8cdf7;
+  width: 40%;
+}
+
 .merci {
   margin-top: 50px;
+  margin-bottom: 50px;
   font-family: "ShadowsIntoLight", cursive;
+}
+
+.prix-total {
+  margin-top: 30px;
 }
 
 body, h1, h2, h3, h4, h5, p {
