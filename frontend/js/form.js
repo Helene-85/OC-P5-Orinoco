@@ -66,7 +66,6 @@ function getFocus() {
     document.getElementById("inputFirstName").focus();
 }
 
-document.getElementById("inputFirstName").focus();
 /******************************************************
 On contrôle la conformité des informations données par
 les utilisateurs en excluant une liste de caractère 
@@ -144,7 +143,7 @@ On écoute le click sur submit pour éxécuter la fonction checkInputs()
 
 function submitForm() {
     let payload = {
-        products : get('products'),
+        products : Storage.get('products'),
         contact: {
             firstName: document.getElementById('inputFirstName').value,
             lastName: document.getElementById('inputLastName').value,
@@ -155,20 +154,18 @@ function submitForm() {
     };
     console.log(payload);
 
-/*     ajax("http://localhost:3000/api/furniture/order", 'POST', 'JSON.stringify(payload)')
-
-}; */
-return new Promise((resolve, reject) => {
-        let req = new XMLHttpRequest();
-        req.open("POST", "http://localhost:3000/api/furniture/order");
-        req.addEventListener("load", function() {
-            if(req.status >=200) {
-                resolve(JSON.parse(req.responseText));
-            } else {
-                reject(req.statusText);
-            }
-        });
-        req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        req.send(JSON.stringify(payload));
-      })
+    /* ajax("http://localhost:3000/api/furniture/order", "POST", JSON.stringify(payload)); */
+    return new Promise((resolve, reject) => {
+            let req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:3000/api/furniture/order");
+            req.addEventListener("load", function() {
+                if(req.status >=200) {
+                    resolve(JSON.parse(req.responseText));
+                } else {
+                    reject(req.statusText);
+                }
+            });
+            req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            req.send(JSON.stringify(payload));
+        })
 };

@@ -18,9 +18,8 @@ ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'), 'GET')
 .then((meuble) => {
     displayProduct(meuble);
     show('addToCartButton');
-// la fonction has (utils.js) permet de récupérer les données
-    if (has('products')) {
-        products = get('products');
+    if (Storage.has('products')) {
+        products = Storage.get('products');
     } else {
         products = [];
     }
@@ -29,7 +28,7 @@ ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'), 'GET')
     est désactivé grâce à la fonction
     enableButton située dans utils.js
  ***********************************************/
-    if (! products.includes(getDataFromUrl())) {
+    if (! products.includes(getDataFromUrl('id'))) {
         enableButton('addToCartButton');
         listenForCartAddition();
     }
@@ -57,14 +56,14 @@ function displayProduct(meuble) {
 function listenForCartAddition() {
     document.getElementById('addToCartButton').addEventListener('click', () => {
         alert('Article ajouté au panier');
-        if (has('products')) {
-            products = get('products');
+        if (Storage.has('products')) {
+            products = Storage.get('products');
         } else {
             products = [];
         }
 
         products.push(getDataFromUrl('id'));
-        store('products', products);
+        Storage.store('products', products);
         disableButton('addToCartButton')
         displayTotalOfProducts();
     });

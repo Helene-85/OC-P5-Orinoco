@@ -10,7 +10,7 @@
   y attacher le callback en cas de rejet 
  ***********************************************/
 
-function ajax(url, verb, type) {
+function ajax(url, verb, payload = {}) {
   return new Promise((resolve, reject) => {
     let req = new XMLHttpRequest();
     req.open(verb, url);
@@ -22,7 +22,7 @@ function ajax(url, verb, type) {
       }
     });
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(type);
+    req.send(payload);
   })
 }
 
@@ -37,7 +37,7 @@ function countQtyOfProductsInCart() {
     return 0;
   }
 
-  return get('products').length
+  return Storage.get('products').length
 }
 
 /***********************************************
@@ -75,7 +75,7 @@ function hide(id) {
 }
 
 function isCartEmpty() {
-  return (!has('products') || get('products').length == 0);
+  return (!Storage.has('products') || Storage.get('products').length == 0);
 }
 
 function renderProduct(meuble, type) {
