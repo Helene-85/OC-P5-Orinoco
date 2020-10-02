@@ -154,18 +154,5 @@ function submitForm() {
     };
     console.log(payload);
 
-    /* ajax("http://localhost:3000/api/furniture/order", "POST", JSON.stringify(payload)); */
-    return new Promise((resolve, reject) => {
-            let req = new XMLHttpRequest();
-            req.open("POST", "http://localhost:3000/api/furniture/order");
-            req.addEventListener("load", function() {
-                if(req.status >=200) {
-                    resolve(JSON.parse(req.responseText));
-                } else {
-                    reject(req.statusText);
-                }
-            });
-            req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            req.send(JSON.stringify(payload));
-        })
+    ajax("http://localhost:3000/api/furniture/order", "POST", payload);
 };

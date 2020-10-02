@@ -22,7 +22,7 @@ function ajax(url, verb, payload = {}) {
       }
     });
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(payload);
+    req.send(JSON.stringify(payload));
   })
 }
 
