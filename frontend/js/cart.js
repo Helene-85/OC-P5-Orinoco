@@ -33,7 +33,7 @@ function displayProduct(product) {
 
 // On affiche le prix total du panier
 function displayTotal(total) {
-    document.getElementById('totalCost').innerHTML = 'Prix total = ' + (total / 100) + ',00€';
+    document.getElementById('totalCost').innerHTML = 'Prix total = ' + money(total);
 }
 
 // On écoute le click sur le bouton vider le panier 

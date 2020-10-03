@@ -1,6 +1,7 @@
 const Storage = {
     engine: localStorage,
-    // on efface tout le contenu du localStorage
+
+    // On efface tout le contenu du localStorage
     clear() {
         return this.engine.clear();
     },
