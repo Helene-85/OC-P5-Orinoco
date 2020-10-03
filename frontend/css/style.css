@@ -154,6 +154,11 @@ footer a {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 768px) {
+  .card__right-side .card__single-name {
+    font-size: 1.5em;
+  }
+}
 .card__right-side .card__single-description {
   font-family: "Raleway", sans-serif;
   font-size: 0.6em;
@@ -213,6 +218,14 @@ footer a {
   display: flex;
   align-items: flex-start;
 }
+@media screen and (max-width: 768px) {
+  .cart__single-product {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+  }
+}
 
 .left-side {
   background-color: white;
@@ -235,6 +248,7 @@ footer a {
 @media screen and (max-width: 768px) {
   .cart__left-side .cart__single-img {
     width: 150px;
+    margin-bottom: 10px;
   }
 }
 
@@ -387,21 +401,32 @@ footer a {
 .cart__button-clear:hover {
   background: 0px center #FAFAFA;
 }
+@media screen and (max-width: 768px) {
+  .cart__button-clear {
+    font-size: 0.5em;
+  }
+}
 
 .order__container {
   margin: auto;
   margin-top: 150px;
-  background-color: #f3e9f1;
+  background-color: white;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px #a8cdf7;
+  box-shadow: 0 2px 5px #f1f1f1;
   width: 40%;
+}
+@media screen and (max-width: 768px) {
+  .order__container {
+    width: 80%;
+    margin-top: 50px;
+  }
 }
 
 .merci {
   margin-top: 50px;
   margin-bottom: 50px;
-  font-family: "ShadowsIntoLight", cursive;
+  font-family: "Raleway", sans-serif;
 }
 
 .prix-total {

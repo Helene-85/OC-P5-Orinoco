@@ -36,6 +36,9 @@
     & .card__single-name {
         font-size: 2.5em;
         margin-bottom: 20px;
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+        }
     }
     & .card__single-description {
         font-family: 'Raleway', sans-serif;
