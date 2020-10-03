@@ -154,5 +154,5 @@ function submitForm() {
     };
     console.log(payload);
 
-    ajax("http://localhost:3000/api/furniture/order", "POST", payload);
+    return ajax("http://localhost:3000/api/furniture/order", "POST", payload);
 };
