@@ -55,7 +55,6 @@ function displayProduct(meuble) {
 
 function listenForCartAddition() {
     document.getElementById('addToCartButton').addEventListener('click', () => {
-        alert('Article ajouté au panier');
         if (Storage.has('products')) {
             products = Storage.get('products');
         } else {

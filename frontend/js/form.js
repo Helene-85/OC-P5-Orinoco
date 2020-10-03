@@ -133,26 +133,3 @@ function setSuccesFor(input) {
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
 }
-
-/******************************************************
-Création de l'object contact en prévision de l'envoi au 
-serveur
-On récupère les emplacements des éléments dans le DOM
-On écoute le click sur submit pour éxécuter la fonction checkInputs()
-*******************************************************/
-
-function submitForm() {
-    let payload = {
-        products : Storage.get('products'),
-        contact: {
-            firstName: document.getElementById('inputFirstName').value,
-            lastName: document.getElementById('inputLastName').value,
-            address: document.getElementById('address').value,
-            city: document.getElementById('city').value,
-            email: document.getElementById('inputEmail').value,
-        }
-    };
-    console.log(payload);
-
-    return ajax("http://localhost:3000/api/furniture/order", "POST", payload);
-};

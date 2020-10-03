@@ -73,7 +73,19 @@ function listenForCartSubmission(total) {
             alert('Merci de bien remplir le formulaire')
             return;
         }
-        submitForm().then((response) => {
+
+        let payload = {
+            products : Storage.get('products'),
+            contact: {
+                firstName: document.getElementById('inputFirstName').value,
+                lastName: document.getElementById('inputLastName').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                email: document.getElementById('inputEmail').value,
+            }
+        };
+
+        ajax("http://localhost:3000/api/furniture/order", "POST", payload).then((response) => {
             window.location.href = `order.html?order=${response.orderId}&total=${total}`;
         });
     });
