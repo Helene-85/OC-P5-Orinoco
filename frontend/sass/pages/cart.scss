@@ -16,9 +16,6 @@
     cursor: pointer;
     padding: 0px 5px 10px;
     border: #f0f0f0;
-    &:hover {
-        background: 0px center $primary-color;
-    }
 }
 
 .recap-order {
@@ -26,18 +23,24 @@
 }
 
 .cart__single-product {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .left-side {
-    border: black 2px;
+    background-color: white;
+    padding: 15px;
+    & .recap-order {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $text-color;
+    }
 }
 
 .cart__left-side {
     display: flex;
     flex-direction: row;
+    align-content: flex-start;
     width: 50%;
     & .cart__single-img {
         width: 150px;
@@ -50,7 +53,7 @@
 }
 
 .fa-trash {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .total__cost-title {
     margin-top: 30px;
@@ -59,17 +62,15 @@
 }
 
 .cart__right-side {
+    width: 40%;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 10px;
-    text-align: center;
-    & .cart__single-name {
-        margin-bottom: 20px;
-    }
+    text-align: left;
     & .cart__single-price {
-        font-style: italic;
         font-size: 1em;
         font-weight: lighter;
+        margin-bottom: 10px;
     }
 }
 
@@ -78,7 +79,6 @@
     margin-top: 150px;
     background-color: $primary-color;
     padding: 15px;
-    border-radius: 5px;
     box-shadow: 0 2px 5px #a8cdf7;
     width: 40%;
     & h2 {
@@ -91,14 +91,14 @@
 }
 
 .rigth-side {
-    background-color: $primary-color;
+    background-color: white;
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #a8cdf7;
     width: 40%;
     text-align: left;
     & .order__title {
-        margin-bottom: 30px; 
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $text-color;
     }
     @media screen and (max-width: 768px) {
         margin-top: 30px;
@@ -195,7 +195,7 @@
     height: 25px;
     text-transform: uppercase;
     &:hover {
-        background: 0px center $primary-color;
+        background: 0px center #FAFAFA;
     }
 }
 

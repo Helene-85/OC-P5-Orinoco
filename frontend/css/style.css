@@ -203,27 +203,30 @@ footer a {
   padding: 0px 5px 10px;
   border: #f0f0f0;
 }
-.suppr:hover {
-  background: 0px center #f3e9f1;
-}
 
 .recap-order {
   text-align: left;
 }
 
 .cart__single-product {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .left-side {
-  border: black 2px;
+  background-color: white;
+  padding: 15px;
+}
+.left-side .recap-order {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #424242;
 }
 
 .cart__left-side {
   display: flex;
   flex-direction: row;
+  align-content: flex-start;
   width: 50%;
 }
 .cart__left-side .cart__single-img {
@@ -236,7 +239,7 @@ footer a {
 }
 
 .fa-trash {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .total__cost-title {
@@ -246,18 +249,16 @@ footer a {
 }
 
 .cart__right-side {
+  width: 40%;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: 10px;
-  text-align: center;
-}
-.cart__right-side .cart__single-name {
-  margin-bottom: 20px;
+  text-align: left;
 }
 .cart__right-side .cart__single-price {
-  font-style: italic;
   font-size: 1em;
   font-weight: lighter;
+  margin-bottom: 10px;
 }
 
 .empty__cart {
@@ -265,7 +266,6 @@ footer a {
   margin-top: 150px;
   background-color: #f3e9f1;
   padding: 15px;
-  border-radius: 5px;
   box-shadow: 0 2px 5px #a8cdf7;
   width: 40%;
 }
@@ -278,15 +278,15 @@ footer a {
 }
 
 .rigth-side {
-  background-color: #f3e9f1;
+  background-color: white;
   padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px #a8cdf7;
   width: 40%;
   text-align: left;
 }
 .rigth-side .order__title {
   margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #424242;
 }
 @media screen and (max-width: 768px) {
   .rigth-side {
@@ -385,7 +385,7 @@ footer a {
   text-transform: uppercase;
 }
 .cart__button-clear:hover {
-  background: 0px center #f3e9f1;
+  background: 0px center #FAFAFA;
 }
 
 .order__container {
@@ -416,6 +416,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #FAFAFA;
 }
 
 main {
