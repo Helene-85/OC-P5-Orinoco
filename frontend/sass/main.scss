@@ -35,8 +35,10 @@ main {
 }
  
 .main-title {
-    font-family: $font-logo;
-    font-size: 3em;
+    font-family: $font-maintitle;
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
     @media screen and (max-width: 768px) {
         font-size: 1.6em;
         }

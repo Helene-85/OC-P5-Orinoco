@@ -217,13 +217,17 @@ footer a {
   align-items: center;
 }
 
+.left-side {
+  border: black 2px;
+}
+
 .cart__left-side {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 50%;
 }
 .cart__left-side .cart__single-img {
-  width: 200px;
+  width: 150px;
 }
 @media screen and (max-width: 768px) {
   .cart__left-side .cart__single-img {
@@ -238,12 +242,14 @@ footer a {
 .total__cost-title {
   margin-top: 30px;
   text-align: center;
+  font-style: italic;
 }
 
 .cart__right-side {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: 10px;
+  text-align: center;
 }
 .cart__right-side .cart__single-name {
   margin-bottom: 20px;
@@ -352,7 +358,7 @@ footer a {
   cursor: pointer;
   border: 0px;
   border-radius: 9.5px;
-  background: 0px center #2b2b2b;
+  background: 0px center black;
   color: white;
   display: inline-block;
   font-size: 16px;
@@ -363,6 +369,23 @@ footer a {
 }
 .cart__button:hover {
   background: 0px center #616161;
+}
+
+.cart__button-clear {
+  width: 50%;
+  margin-top: 20px;
+  cursor: pointer;
+  background: 0px center;
+  border-radius: 9.5px;
+  color: #2b2b2b;
+  display: inline-block;
+  font-size: 12px;
+  padding: 0px 10px;
+  height: 25px;
+  text-transform: uppercase;
+}
+.cart__button-clear:hover {
+  background: 0px center #f3e9f1;
 }
 
 .order__container {
@@ -414,8 +437,10 @@ main h1 {
 }
 
 .main-title {
-  font-family: "ShadowsIntoLight", cursive;
-  font-size: 3em;
+  font-family: "OpenSansBold", sans-serif;
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
   .main-title {
