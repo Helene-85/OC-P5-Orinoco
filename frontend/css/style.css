@@ -278,16 +278,15 @@ footer a {
 .empty__cart {
   margin: auto;
   margin-top: 150px;
-  background-color: #f3e9f1;
+  background-color: white;
   padding: 15px;
-  box-shadow: 0 2px 5px #a8cdf7;
-  width: 40%;
+  box-shadow: 0 2px 5px #f1f1f1;
+  width: 30%;
 }
 .empty__cart h2 {
   text-align: center;
   text-transform: uppercase;
   font-family: "OpenSansLigt", sans-serif;
-  font-weight: lighter;
   color: #212121;
 }
 
