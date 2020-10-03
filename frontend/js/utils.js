@@ -1,17 +1,7 @@
-/***********************************************
-  Requête ajax de type Get 'url'
-  La requête ajax permet la mise en place de la 
-  méthode JSON.parse() pour construire l'objet 
-  JavaScript
- ***********************************************/
-
-/***********************************************
-  Mise en place d'un promesse dans la fonction pour
-  y attacher le callback en cas de rejet 
- ***********************************************/
-
+// Fonction permettant de faire une requête ajax
+// Si la requête est validée : construction d'un objet JavaScript grâce à JSON.parse()
 function ajax(url, verb, payload = {}) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {   // Promesse permettant d'indiquer la marche à suivre en cas de succès ou de rejet
     let req = new XMLHttpRequest();
     req.open(verb, url);
     req.addEventListener("load", function() {
@@ -26,12 +16,7 @@ function ajax(url, verb, payload = {}) {
   })
 }
 
-
-/***********************************************
-  Contrôle si le panier contient des produits
-  Si vide : affiche 0
-  Si rempli : retourne le nombre de produits
- ***********************************************/
+// Fonction permettant d'indiquer la quantité de panier dans la panier si celui-ci est rempli
 function countQtyOfProductsInCart() {
   if (isCartEmpty()) {
     return 0;
@@ -40,54 +25,53 @@ function countQtyOfProductsInCart() {
   return Storage.get('products').length
 }
 
-/***********************************************
-  Création de fonctions permettant d'activer
-  ou de désactiver un bouton
- ***********************************************/
-
+// Fonction permettant de désactiver un bouton
 function disableButton(id) {
   document.getElementById(id).disabled = true;
   document.getElementById(id).innerHTML = "Produit déjà ajouté"
 }
 
+// Affichage du nombre total de produits
 function displayTotalOfProducts() {
   let qty = countQtyOfProductsInCart();
   document.getElementById('totalProducts').innerHTML = qty;
 }
 
+// Fonction permettant d'activer un bouton
 function enableButton(id) {
   document.getElementById(id).disabled = false;
   document.getElementById(id).innerHTML = "Ajouter le produit"
 }
 
+// Fonction permettant de mettre le focus sur un élément ciblé par l'id passé en paramètre
 function focus(id) {
   document.getElementById(id).focus();
 }
 
-/***********************************************
-  La fonction getDataFromUrl permet de récupérer
-  les données ciblées par l'id passé en paramètre
- ***********************************************/
+// Fonction permettant de récupérer les données ciblées par l'id passé en paramètre
 function getDataFromUrl(param) {
   let urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
+// Fonction permettant de cacher un élément
 function hide(id) {
   document.getElementById(id).style.display = 'none';
 }
 
+// Fonction indiquant si le panier contient des produits ou est vide
 function isCartEmpty() {
   return (!Storage.has('products') || Storage.get('products').length == 0);
 }
 
+// Division du prix par 100 avec ajout de ,00€
 function money(price) {
   return `${price / 100},00€`;
 }
 
+// Fonction permettant d'afficher les produits, ciblés grâce aux paramètres meuble et type
+// Création des bloc HTML avec les Templates Strings
 function renderProduct(meuble, type) {
-// Création du bloc HTML grâce au Template String
-// Ajout du type pour cibler sur List ou Single
   if(type == "List") {
     return `
       <div class="card">
@@ -104,14 +88,12 @@ function renderProduct(meuble, type) {
         `
   }
   if(type == "Single") {
-  // Création d'une boucle pour afficher toutes les options de vernis
-    let htmlOptions = '';
+    let htmlOptions = '';       // Boucle permettant d'afficher toutes les options de vernis
 
     for (let i = 0; i < meuble.varnish.length; i++) {
       console.log(meuble.varnish)
       htmlOptions += `<option>${meuble.varnish[i]}</option>`
     }
-  // Création du bloc HTML grâce au Template String
     return`
       <div class="card__single-product">
         <div class="card__left-side">
@@ -150,10 +132,7 @@ function renderProduct(meuble, type) {
   }
 }
 
-/***********************************************
-  Création de fonctions permettant d'afficher
-  un élément
- ***********************************************/
+// Fonction permettant d'afficher un élément
 function show(id) {
   document.getElementById(id).style.display = 'block';
 }

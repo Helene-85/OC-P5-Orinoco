@@ -1,26 +1,14 @@
+// On appelle la fonction displayTotalOfProducts() pour afficher le nombre de produits dans le panier
 displayTotalOfProducts();
 
-/***********************************************
-  Appel de la fonction ajax située dans utils.js
-  Création d'une boucle forEach afin d'afficher 
-  tous les produits
- ***********************************************/
-
-ajax("http://localhost:3000/api/furniture", 'GET').then((products) => {
-  products.forEach((products) => {
+// On appelle la fonction ajax() en lui passant les paramètres ciblées (url, verb)
+ajax("http://localhost:3000/api/furniture", 'GET').then((products) => { // Si la requête est validée on exécute le code suivant
+  products.forEach((products) => { // On fait une boucle pour afficher tous les produits
     displayProduct(products);
   });
 })
 
-
-/***********************************************
-  La fonction displayProduct affiche les produits
-  sur la page index.html
-  Appel de la fonction renderProduct, située dans 
-  utils.js avec ciblage sur le Template String 
-  "List"
- ***********************************************/
-
+// On affiche tous les produits dans le DOM
 function displayProduct(products) {
-    document.getElementById('productList').innerHTML += renderProduct(products, "List");
+  document.getElementById('productList').innerHTML += renderProduct(products, "List");
 };

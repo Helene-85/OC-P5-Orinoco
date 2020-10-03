@@ -1,12 +1,4 @@
-/******************************************************
-Vise à contrôler que les inputs sont remplis et 
-conformes
-On récupère les inputs
-La méthode trim() retire les blancs de début et fin de 
-chaîne
-Si ok : on ajoute une class success (CSS)
-Si non : on ajoute une class error (CSS)
-*******************************************************/
+// On vérifie la conformité des inputs : si ok : on ajoute une class success / si non : on ajoute une class error
 function checkInputs() {
     let firstName = document.getElementById('inputFirstName');
     let lastName = document.getElementById('inputLastName');
@@ -14,7 +6,7 @@ function checkInputs() {
     let city = document.getElementById('city');
     let email = document.getElementById('inputEmail');
    
-    const firstNameValue = firstName.value.trim();
+    const firstNameValue = firstName.value.trim();      // On retire les blancs de début et fin de chaîne
     const lastNameValue = lastName.value.trim();
     const addressValue = address.value.trim();
     const cityValue = city.value.trim();
@@ -61,11 +53,7 @@ function checkInputs() {
     }
 }
 
-/******************************************************
-On contrôle la conformité des informations données par
-les utilisateurs en excluant une liste de caractère 
-: utilisation de RexExp
-*******************************************************/
+// On contrôle la conformité des informations données par les utilisateurs en excluant une liste de caractère : utilisation de RexExp
 function isAddress(address) {
     return /^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/.test(address);
 }
@@ -82,39 +70,19 @@ function isFirstName(firstName) {
     return /^([a-zA-Zàâäéèêëïîôöùûüç']+)$/.test(firstName);
 }
 
-/******************************************************
-Dans la fonction checkInputs, cela permet de vérifier
-que le formulaire est rempli / valide.
-Si non on ajoute la classe 'form-control error' qui
-signifie à l'utlisateur que le formulaire est mal
-rempli grâce au CSS.
-*******************************************************/
+// On contrôle la validité du formulaire, ajout de la classe 'form-control error' en cas d'invalidité
 function isFormValid() {
     return (document.getElementsByClassName('form-control error').length == 0)
 }
 
-/******************************************************
-On contrôle la conformité du nom de famille
-en excluant une liste de caractère : utilisation d'un RexExp
-*******************************************************/
+// On contrôle la conformité des informations données par les utilisateurs en excluant une liste de caractère : utilisation de RexExp
 function isLastName(lastName) {
     return /^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/.test(lastName);
 }
 
-/******************************************************
-Création de fonctions setErrorFor et setSuccesFor
-=> Si l'input est invalidé : 
-On désigne que .form-control est le parent de l'input
-On ajoute le message d'erreur dans la balise small
-On ajoute la class form-control error pour activer le 
-CSS correspondant
-=> Si l'input est validé :
-On désigne que .form-control est le parent de l'input
-On ajoute la class form-control success pour activer le 
-CSS correspondant
-*******************************************************/
+// On ajoute un message d'erreur si le formulaire est invalidé, on modifie le design du DOM
 function setErrorFor(input, message) {
-    const formControl = input.parentElement;
+    const formControl = input.parentElement;        // On désigne que .form-control est le parent de l'input
     const small = formControl.querySelector('small'); 
 
     small.innerText = message;
@@ -122,6 +90,7 @@ function setErrorFor(input, message) {
     formControl.className = 'form-control error';
 }
 
+// On modifie le design du DOM en cas de formulaire validé
 function setSuccesFor(input) {
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
