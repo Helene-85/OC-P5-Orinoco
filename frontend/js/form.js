@@ -7,7 +7,6 @@ chaîne
 Si ok : on ajoute une class success (CSS)
 Si non : on ajoute une class error (CSS)
 *******************************************************/
-
 function checkInputs() {
     let firstName = document.getElementById('inputFirstName');
     let lastName = document.getElementById('inputLastName');
@@ -62,16 +61,11 @@ function checkInputs() {
     }
 }
 
-function getFocus() {
-    document.getElementById("inputFirstName").focus();
-}
-
 /******************************************************
 On contrôle la conformité des informations données par
 les utilisateurs en excluant une liste de caractère 
 : utilisation de RexExp
 *******************************************************/
-
 function isAddress(address) {
     return /^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/.test(address);
 }
@@ -119,7 +113,6 @@ On désigne que .form-control est le parent de l'input
 On ajoute la class form-control success pour activer le 
 CSS correspondant
 *******************************************************/
-
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
     const small = formControl.querySelector('small'); 

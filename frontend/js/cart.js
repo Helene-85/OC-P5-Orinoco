@@ -5,7 +5,7 @@ if (isCartEmpty()) {
     show('empty'); 
 } else {
     hide('empty');
-    document.getElementById("inputFirstName").focus();
+    focus('inputFirstName');
     let idsInCart = Storage.get('products');
     let total = 0;
     ajax("http://localhost:3000/api/furniture", 'GET').then((products) => {

@@ -18,6 +18,7 @@ ajax("http://localhost:3000/api/furniture/" + getDataFromUrl('id'), 'GET')
 .then((meuble) => {
     displayProduct(meuble);
     show('addToCartButton');
+    focus('chooseAnOption')
     if (Storage.has('products')) {
         products = Storage.get('products');
     } else {

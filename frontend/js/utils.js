@@ -60,11 +60,14 @@ function enableButton(id) {
   document.getElementById(id).innerHTML = "Ajouter le produit"
 }
 
+function focus(id) {
+  document.getElementById(id).focus();
+}
+
 /***********************************************
   La fonction getDataFromUrl permet de récupérer
   les données ciblées par l'id passé en paramètre
  ***********************************************/
-
 function getDataFromUrl(param) {
   let urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
