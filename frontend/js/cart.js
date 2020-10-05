@@ -27,7 +27,7 @@ if (isCartEmpty()) {                                    // Si le panier est vide
     })
 }
 
-// On affiche les produits contenu dans la panier dans le DOM
+// On affiche les produits contenus dans le panier sur le DOM
 function displayProduct(product) {
     document.getElementById('productCart').innerHTML += renderProduct(product, "Cart");
 }
