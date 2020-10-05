@@ -29,6 +29,7 @@ function displayProduct(meuble) {
 // On écoute le clic de l'utilisateur afin d'ajouter le produit dans la localStorage et désactiver le bouton
 function listenForCartAddition() {
     document.getElementById('addToCartButton').addEventListener('click', () => {
+        
         if (Storage.has('products')) {
             products = Storage.get('products');
         } else {

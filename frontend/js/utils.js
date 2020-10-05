@@ -48,7 +48,7 @@ function focus(id) {
   document.getElementById(id).focus();
 }
 
-// Fonction permettant de récupérer les données ciblées par l'id passé en paramètre
+// Fonction permettant de récupérer les données passées en paramètres dans l'url
 function getDataFromUrl(param) {
   let urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
@@ -94,6 +94,7 @@ function renderProduct(meuble, type) {
       console.log(meuble.varnish)
       htmlOptions += `<option>${meuble.varnish[i]}</option>`
     }
+
     return`
       <div class="card__single-product">
         <div class="card__left-side">
@@ -112,6 +113,7 @@ function renderProduct(meuble, type) {
       </div>
         `
   }
+
   if (type == "Cart") {
     return`
       <div class="cart__single-product">

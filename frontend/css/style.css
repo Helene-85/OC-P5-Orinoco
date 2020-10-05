@@ -17,24 +17,33 @@
   src: url("../fonts/ShadowsIntoLight-Regular.ttf");
 }
 .navbar {
-  background-color: #f3e9f1;
+  background-color: white;
+  border-bottom: 2px solid #5D7967;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-transform: uppercase;
   font-size: 1.2em;
   min-height: 100px;
   margin-bottom: 30px;
 }
 .navbar .navbar__main-title {
-  color: #212121;
+  color: #424242;
   font-size: 3em;
+  font-weight: lighter;
   padding-left: 50px;
   text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+  .navbar .navbar__main-title {
+    font-size: 2.5em;
+    padding-left: 30px;
+  }
+}
 .navbar .navbar__nav {
   padding-right: 50px;
-  font-family: "OpenSansBold", sans-serif;
+  font-family: "OpenSansLigt", sans-serif;
 }
 @media screen and (max-width: 768px) {
   .navbar .navbar__nav {
@@ -49,17 +58,18 @@
 
 a {
   text-decoration: none;
-  color: #424242;
+  color: black;
+  font-weight: lighter;
 }
 a .fa-shopping-cart {
-  color: #212121;
+  color: #424242;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
   padding-left: 50px;
-  font-family: "ShadowsIntoLight", cursive;
+  font-family: "OpenSansBold", sans-serif;
 }
 .logo-title img {
   width: 82px;
@@ -76,17 +86,19 @@ footer {
   width: 100%;
   height: 80px;
   margin-top: 50px;
-  background-color: #f3e9f1;
+  border-top: 2px solid #5D7967;
+  background-color: white;
   font-family: "OpenSansLigt", sans-serif;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  text-transform: uppercase;
   bottom: 0;
   position: fixed;
   margin-top: 30px;
 }
 footer a {
-  color: #424242;
+  color: black;
   text-decoration: none;
   padding-left: 50px;
   padding-right: 50px;
@@ -123,24 +135,28 @@ footer a {
 }
 
 .card__single-product {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: center;
+  background-color: white;
+  box-shadow: 0px 0px 4px 5px #f1f1f1;
+  padding: 15px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 869px) {
   .card__single-product {
     flex-direction: column;
+    justify-content: center;
   }
 }
 
-.card__left-side {
-  width: 60%;
-}
 .card__left-side .card__single-img {
-  width: 400px;
-  padding-top: 20px;
+  width: 300px;
 }
 @media screen and (max-width: 768px) {
   .card__left-side .card__single-img {
+    width: 200px;
     margin-bottom: 30px;
     width: 200px;
   }
@@ -148,7 +164,9 @@ footer a {
 
 .card__right-side {
   text-align: left;
-  width: 40%;
+  width: 50%;
+  margin-left: 5px;
+  margin-left: 60px;
 }
 .card__right-side .card__single-name {
   font-size: 2.5em;
@@ -162,18 +180,26 @@ footer a {
 .card__right-side .card__single-description {
   font-family: "Raleway", sans-serif;
   font-size: 0.6em;
+  font-weight: lighter;
   margin-bottom: 20px;
 }
 .card__right-side .card__single-price {
   letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+  .card__right-side {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .card__single-btn {
   margin-top: 50px;
   cursor: pointer;
   border: 0px;
-  border-radius: 9.5px;
-  background: 0px center #2b2b2b;
+  border-radius: 2.5px;
+  background: 0px center #5D7967;
   color: white;
   display: inline-block;
   font-size: 14px;
@@ -202,7 +228,7 @@ footer a {
 
 .suppr {
   background: 0px center white;
-  color: #2b2b2b;
+  color: #9E9E9E;
   margin-top: 10px;
   cursor: pointer;
   padding: 0px 5px 10px;
@@ -235,20 +261,34 @@ footer a {
   padding-bottom: 10px;
   border-bottom: 1px solid #424242;
 }
+@media screen and (max-width: 768px) {
+  .left-side {
+    width: 80%;
+  }
+}
 
 .cart__left-side {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cart__left-side .cart__single-img {
   width: 150px;
 }
 @media screen and (max-width: 768px) {
+  .cart__left-side {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .cart__left-side .cart__single-img {
-    width: 150px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -270,7 +310,7 @@ footer a {
   text-align: left;
 }
 .cart__right-side .cart__single-price {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: lighter;
   margin-bottom: 10px;
 }
@@ -287,7 +327,7 @@ footer a {
   text-align: center;
   text-transform: uppercase;
   font-family: "OpenSansLigt", sans-serif;
-  color: #212121;
+  color: #424242;
 }
 
 .rigth-side {
@@ -365,13 +405,17 @@ footer a {
   color: #e74c3c;
 }
 
+.cart__single-name {
+  font-weight: bold;
+}
+
 .cart__button {
   width: 100%;
   margin-top: 20px;
   cursor: pointer;
   border: 0px;
-  border-radius: 9.5px;
-  background: 0px center black;
+  border-radius: 2.5px;
+  background: 0px center #5D7967;
   color: white;
   display: inline-block;
   font-size: 16px;
@@ -389,7 +433,8 @@ footer a {
   margin-top: 20px;
   cursor: pointer;
   background: 0px center;
-  border-radius: 9.5px;
+  border: 0px;
+  border-radius: 2.5px;
   color: #2b2b2b;
   display: inline-block;
   font-size: 12px;
@@ -398,7 +443,8 @@ footer a {
   text-transform: uppercase;
 }
 .cart__button-clear:hover {
-  background: 0px center #FAFAFA;
+  background: 0px center #5D7967;
+  color: white;
 }
 @media screen and (max-width: 768px) {
   .cart__button-clear {
@@ -426,6 +472,8 @@ footer a {
   margin-top: 50px;
   margin-bottom: 50px;
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  color: #5D7967;
 }
 
 .prix-total {
@@ -458,12 +506,13 @@ main {
 }
 main h1 {
   margin-bottom: 50px;
-  font-family: "OpenSansBold", sans-serif;
+  font-family: "OpenSansLigt", sans-serif;
 }
 
 .main-title {
-  font-family: "OpenSansBold", sans-serif;
+  font-family: "OpenSansLigt", sans-serif;
   font-size: 2.5em;
+  font-weight: lighter;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -526,9 +575,9 @@ main h1 {
 .card-btn {
   font-size: 0.6em;
   letter-spacing: 0.5px;
-  background-color: #f3e9f1;
-  color: #424242;
-  border-radius: 9.5px;
+  background-color: #5D7967;
+  color: white;
+  border-radius: 2.5px;
   padding: 5px 10px 5px;
   align-self: center;
   text-align: center;
