@@ -16,7 +16,7 @@ function ajax(url, verb, payload = {}) {
   })
 }
 
-// Fonction permettant d'indiquer la quantité de produits dans la panier si celui-ci est rempli
+// Fonction permettant d'indiquer la quantité de produits dans le panier si celui-ci est rempli
 function countQtyOfProductsInCart() {
   if (isCartEmpty()) {
     return 0;
