@@ -9,7 +9,7 @@ This is the back end server for Project 5 of the Junior Web Developer path.
 - Créer un plan de test pour une application
 - Interagir avec un web service avec JavaScript
 
-+ Progression : en cours de réalisation
++ Progression : projet VALIDÉ le 08 octobre 2020
 
 ### Prerequisites ###
 
