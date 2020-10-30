@@ -26,8 +26,6 @@ avant envoi au backend
 - Créer un plan de test pour une application
 - Interagir avec un web service avec JavaScript
 
-+ Progression : projet VALIDÉ le 08 octobre 2020
-
 ## Prerequisites
 
 You will need to have Node and `npm` installed locally on your machine.
