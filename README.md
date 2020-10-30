@@ -2,6 +2,10 @@
 
 Construisez une API sécurisée pour une application d'avis gastronomiques
 
+## Progression
+
+Projet validé le 08/10/2020
+
 ## Scénario du projet
 
 Développement du **frontend** d'un site e-commerce en **Javascript**, sans **framework**
@@ -15,7 +19,7 @@ Architecture du site :
 avant envoi au backend
 - Page de confirmation : affichage du montant total de la commande, d'un remerciement et de  l'oder ID récupéré dans le back-end
 
-## Compétences évaluées ##
+## Compétences évaluées
 
 - Valider des données issues de sources externes
 - Gérer des événements JavaScript
@@ -24,11 +28,11 @@ avant envoi au backend
 
 + Progression : projet VALIDÉ le 08 octobre 2020
 
-## Prerequisites ##
+## Prerequisites
 
 You will need to have Node and `npm` installed locally on your machine.
 
-## Installation ##
+## Installation
 
 Clone this repo. From within the project folder, run `npm install`. You 
 can then run the server with `node server`. 
