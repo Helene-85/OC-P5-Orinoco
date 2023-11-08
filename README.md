@@ -1,6 +1,6 @@
-# Projet 6 - Openclassrooms - parcours [Développeur.se Web Fullstack](https://openclassrooms.com/fr/paths/185-developpeur-web)
+# Projet 5 - Openclassrooms - parcours [Développeur.se Web Fullstack](https://openclassrooms.com/fr/paths/185-developpeur-web)
 
-Construisez une API sécurisée pour une application d'avis gastronomiques
+Construisez un site e-commerce en JavaScript
 
 ## Progression
 
